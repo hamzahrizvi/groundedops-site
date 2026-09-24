@@ -1,0 +1,50 @@
+<!-- title: Get started · GroundedOps | desc: Start a free 14-day trial or buy a GroundedOps licence. | nav: start -->
+<section class="section" style="padding-top: 48px;">
+  <form class="wrap checkout" data-checkout onsubmit="return false;">
+    <div>
+      <h1 style="font-size: clamp(34px, 4vw, 44px); margin-bottom: 8px;">Get your licence</h1>
+      <p class="ink2" style="margin-bottom: 32px;">Your licence key and download link arrive by email the moment you finish.</p>
+
+      <fieldset>
+        <legend>1 · How do you want to start?</legend>
+        <div class="plan-radios">
+          <label class="radio-card"><input type="radio" name="plan" value="trial" checked><b>Free trial</b><span class="p">$0 for 14 days</span><small>Professional features. No card. Pick a plan whenever you’re ready.</small></label>
+          <label class="radio-card"><input type="radio" name="plan" value="starter"><b>Starter</b><span class="p" data-plan-price="starter">$199 / month</span><small>1 installation, 1 website, email support.</small></label>
+          <label class="radio-card"><input type="radio" name="plan" value="pro"><b>Professional</b><span class="p" data-plan-price="pro">$599 / month</span><small>Production + staging, 3 websites, SSO, priority support.</small></label>
+        </div>
+        <p class="muted" style="font-size: 14px; margin-top: 12px;">Need offline models or unlimited installations? <a href="mailto:hello@groundedops.example">Talk to us about Enterprise</a>.</p>
+      </fieldset>
+
+      <fieldset data-paid-only hidden>
+        <legend>2 · Billing and add-ons</legend>
+        <div class="seg" role="radiogroup" aria-label="Billing period" style="gap: 4px;">
+          <label style="display: inline-flex; align-items: center; gap: 8px; min-height: 44px; padding: 0 16px; cursor: pointer;"><input type="radio" name="period" value="monthly" checked style="accent-color: var(--ink);">Monthly</label>
+          <label style="display: inline-flex; align-items: center; gap: 8px; min-height: 44px; padding: 0 16px; cursor: pointer;"><input type="radio" name="period" value="annual" style="accent-color: var(--ink);">Annual · 2 months free</label>
+        </div>
+        <label class="check-card"><input type="checkbox" name="hosting"><span><b>Managed hosting · +$149 / month</b><small>We run it on our server with a public address, so your website’s widget is always reachable.</small></span></label>
+        <label class="check-card"><input type="checkbox" name="setup"><span><b>Setup &amp; onboarding · from $1,500</b><small>We load your manuals and approve your first FAQ answers with you. Quoted after a short call, not charged today.</small></span></label>
+      </fieldset>
+
+      <fieldset>
+        <legend data-details-label>2 · Your details</legend>
+        <div class="fields">
+          <label class="f">Your name<input type="text" autocomplete="name"></label>
+          <label class="f">Work email<input type="email" autocomplete="email"></label>
+          <label class="f">Company<input type="text" autocomplete="organization"></label>
+          <label class="f">Country<select autocomplete="country-name"><option>United Kingdom</option><option>United States</option><option>Germany</option><option>Other</option></select></label>
+        </div>
+        <label style="display: flex; gap: 10px; align-items: flex-start; font-size: 14px; margin-top: 16px;" class="ink2"><input type="checkbox" style="width: 20px; height: 20px; margin: 1px 0 0; accent-color: var(--accent);">I agree to the <a href="#">Licence terms</a> and have read the <a href="#">Privacy policy</a>.</label>
+      </fieldset>
+    </div>
+
+    <aside class="summary" aria-live="polite">
+      <h2>Summary</h2>
+      <div data-lines style="display: flex; flex-direction: column; gap: 10px;"></div>
+      <div class="due"><b>Due today</b><strong class="price-tbd" data-due>$0</strong></div>
+      <p class="ink2" style="font-size: 14px;" data-then></p>
+      <a class="btn btn-primary btn-block" href="welcome.html?trial=1" data-cta>Email me my trial licence</a>
+      <p class="muted" style="font-size: 13px;">Staging: this doesn’t send anything or take payment. It shows the next screen.</p>
+      <div class="note"><b>Not included: AI usage</b>Answers are written by your own DeepSeek, OpenAI or Claude account, billed to you directly.</div>
+    </aside>
+  </form>
+</section>
