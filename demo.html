@@ -4,8 +4,8 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="robots" content="noindex, nofollow">
-<title>Your licence · GroundedOps</title>
-<meta name="description" content="Your GroundedOps licence key and download.">
+<title>Live demo · GroundedOps</title>
+<meta name="description" content="Click a question and see how GroundedOps answers, asks, or refuses.">
 <link rel="icon" href="assets/logo-mark.svg" type="image/svg+xml">
 <script>try{var t=localStorage.getItem('go-theme');if(t==='light'||t==='dark')document.documentElement.setAttribute('data-theme',t)}catch(e){}</script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -22,11 +22,11 @@
       GroundedOps
     </a>
     <nav class="nav" aria-label="Main">
-      <a href="demo.html" data-nav="demo">Demo</a>
+      <a href="demo.html" data-nav="demo" aria-current="page">Demo</a>
       <a href="how-it-works.html" data-nav="how">How it works</a>
       <a href="pricing.html" data-nav="pricing">Pricing</a>
       <a href="faq.html" data-nav="faq">FAQ</a>
-      <a href="get-started.html" data-nav="start" aria-current="page">Get started</a>
+      <a href="get-started.html" data-nav="start">Get started</a>
     </nav>
     <div class="header-actions">
       <button class="icon-btn" type="button" data-theme-toggle aria-label="Switch colour theme">
@@ -41,60 +41,32 @@
   </div>
 </header>
 <main>
-<section class="section" style="padding-top: 48px;" data-welcome>
+<section class="hero" id="demo">
   <div class="wrap">
-    <div style="display: flex; align-items: center; gap: 20px; margin-bottom: 32px;">
-      <span style="width: 56px; height: 56px; flex-shrink: 0; border-radius: 50%; background: var(--okbg); color: var(--ok); display: flex; align-items: center; justify-content: center; font-size: 26px; font-weight: 600;">✓</span>
-      <div>
-        <h1 style="font-size: clamp(30px, 4vw, 44px);" data-headline>You’re licensed, Acme Devices.</h1>
-        <p class="ink2">We’ve emailed all of this to you as well. <span class="muted">(Staging sample: not a real key.)</span></p>
-      </div>
+    <div class="section-head" style="margin-bottom: 36px;">
+      <div><span class="eyebrow">Live demo · sample manual</span><h1 style="font-size: clamp(36px, 4.6vw, 56px); margin-top: 12px;">Click a question. See what it does.</h1></div>
+      <a class="btn btn-primary" href="get-started.html">Try it on your own manual</a>
     </div>
-
-    <div class="two-col">
-      <div class="stack">
-        <div class="card stack" style="gap: 14px;">
-          <div style="display: flex; justify-content: space-between; align-items: center; gap: 12px; flex-wrap: wrap;"><b>Your licence key</b><span class="pill accent" data-planline>Professional · renews monthly</span></div>
-          <div class="keybox" id="key" data-key>GO-PRO-7F3K-Q9LM-2XWD-8HNA</div>
-          <div style="display: flex; gap: 10px; align-items: center; flex-wrap: wrap;">
-            <button class="btn btn-inverse" type="button" data-copy="#key" style="min-height: 42px; font-size: 14px;">Copy key</button>
-            <button class="btn btn-outline" type="button" style="min-height: 42px; font-size: 14px;">Download licence file</button>
-            <span class="muted" style="font-size: 13px;">Use the file on machines without internet.</span>
-          </div>
-        </div>
-
-        <div class="card stack" style="gap: 14px;">
-          <div style="display: flex; justify-content: space-between;"><b>Download GroundedOps</b><span class="muted" style="font-family: var(--mono); font-size: 13px;">Latest version</span></div>
-          <div class="dl main">
-            <span class="grow"><b>Windows installer</b><br><span class="ink2" style="font-size: 14px;">Windows 10 or 11, 64-bit. Recommended for a single machine.</span></span>
-            <span class="btn btn-primary" style="min-height: 44px;">Download .exe</span>
-          </div>
-          <div class="dl" style="flex-direction: column; align-items: stretch;">
-            <b>Docker, for a server</b>
-            <code class="block">docker run -d -p 8000:8000 -e GO_LICENCE=GO-PRO-… registry.groundedops.example/server:latest</code>
-          </div>
-        </div>
+    <div class="demo" data-demo>
+      <div class="demo-questions" data-questions>
+        <span class="eyebrow">Live demo · sample manual</span>
+        <p class="lead">Click a question. See what it does with it.</p>
       </div>
-
-      <div class="stack">
-        <div class="card stack" style="gap: 16px;">
-          <b>What happens next</b>
-          <div class="numbered">
-            <div><span class="num">1</span><span><b>Install it.</b> The installer opens the setup page in your browser when it finishes.</span></div>
-            <div><span class="num">2</span><span><b>Paste your key.</b> It activates this machine as one of your installations.</span></div>
-            <div><span class="num">3</span><span><b>Connect a model and upload a manual.</b> Your first cited answer is a few minutes away.</span></div>
-          </div>
-        </div>
-        <div class="callout" style="flex-direction: column; gap: 8px;">
-          <b>Going on your public website?</b>
-          <span class="ink2">The widget has to be reachable from your visitors’ browsers. Use a secure tunnel or small server, or add managed hosting.</span>
-        </div>
-        <div class="card" style="display: flex; justify-content: space-between; align-items: center; gap: 12px; flex-wrap: wrap;">
-          <span><b>Want a hand?</b><br><span class="ink2">30 minutes with us, free.</span></span>
-          <a class="btn btn-outline" href="mailto:hello@groundedops.example" style="min-height: 42px; font-size: 14px;">Book a call</a>
-        </div>
+      <div class="widget" aria-label="Sample support widget">
+        <div class="w-head"><span class="w-avatar">A</span><span style="flex: 1;"><b>Acme support</b><small>Answers from our product manuals</small></span><span aria-hidden="true">×</span></div>
+        <div class="w-scope"><span>Asking about <b>Sample product</b></span><span>Change</span></div>
+        <div class="thread" data-thread aria-live="polite"></div>
+        <div class="w-input"><input type="text" disabled aria-label="Your question" placeholder="In your widget, visitors type their own"><span aria-hidden="true"></span></div>
       </div>
+      <aside class="trace" data-trace aria-live="polite"></aside>
     </div>
+  </div>
+</section>
+<section class="section inverse cta">
+  <div class="wrap">
+    <h2>Grounded, or it says nothing.</h2>
+    <p>Download it, point it at one manual, and ask it something hard.</p>
+    <div class="btns"><a class="btn btn-primary" href="get-started.html">Try free for 14 days</a><a class="btn btn-outline" href="mailto:hello@groundedops.example">Book a demo</a></div>
   </div>
 </section>
 </main>

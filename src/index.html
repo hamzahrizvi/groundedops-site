@@ -1,176 +1,251 @@
-<!-- title: GroundedOps · Answers from your own manuals | desc: A self-hosted support assistant that cites the exact page, asks when unclear, and says I don't know instead of guessing. | nav: demo -->
-<section class="hero" id="demo">
-  <div class="wrap">
-    <div class="hero-top">
-      <div>
-        <span class="eyebrow">Self-hosted support assistant for technical manuals</span>
-        <h1>Answers from your own manuals. Checked before they’re shown.</h1>
-      </div>
-      <div class="hero-side">
-        <p>It cites the exact page, asks when a question is unclear, and says “I don’t know” instead of guessing. It runs on your own machine, with your own AI key.</p>
-        <div class="btns">
-          <a class="btn btn-primary" href="get-started.html">Try free for 14 days</a>
-          <a class="btn btn-outline" href="pricing.html">See pricing</a>
-        </div>
-      </div>
-    </div>
+<!-- title: GroundedOps · Answers from your manuals, or none at all | desc: A self-hosted support assistant that answers from your own manuals, cites the page, and refuses to guess. | nav: home -->
+<style>
+  /* Sample landing: fewer words, motion does the explaining.
+     One scale, used everywhere: headings --h2, lead 20px, labels 16px, notes 14px,
+     every page button .x-btn, every section 96px (64px on phones) top and bottom,
+     every heading 48px above what follows it. */
+  :root { --h2: clamp(34px, 4.4vw, 56px); --gap: 48px; }
+  main .section { padding: 96px 0; }
+  @media (max-width: 900px) { main .section { padding: 64px 0; } :root { --gap: 36px; } }
+  .x-h2 { font-family: var(--serif); font-weight: 500; font-size: var(--h2); line-height: 1.08; letter-spacing: -0.02em; margin: 0; }
+  .x-btn { min-height: 52px; min-width: 176px; padding: 0 28px; font: 600 16px var(--sans); }
+  .x-btn-ghost { border: 1px solid var(--oninverse); color: var(--oninverse); background: transparent; }
+  .x-btn-ghost:hover { color: var(--oninverse); background: rgba(255,255,255,.08); }
+  .x-hero { min-height: calc(100vh - 110px); display: grid; grid-template-columns: minmax(0, 1fr) 460px; gap: 64px; align-items: center; padding: 40px 0 64px; }
+  @media (max-width: 960px) { .x-hero { grid-template-columns: 1fr; gap: 36px; min-height: 0; } }
+  .x-hero h1 { font-size: clamp(46px, 6.4vw, 88px); line-height: 0.98; letter-spacing: -0.03em; }
+  .x-hero h1 .soft { color: var(--muted); display: block; }
+  .x-sub { font-size: 20px; line-height: 1.5; color: var(--ink2); margin: 24px 0 32px; }
+  .x-cta { display: flex; gap: 16px; flex-wrap: wrap; align-items: center; }
+  .x-note { font-size: 14px; line-height: 1.5; color: var(--muted); margin: 0; }
 
-    <div class="demo" data-demo>
-      <div class="demo-questions" data-questions>
-        <span class="eyebrow">Live demo · sample manual</span>
-        <p class="lead">Click a question. See what it does with it.</p>
+  /* The self-playing widget */
+  .x-widget { position: relative; height: 520px; display: flex; flex-direction: column; background: var(--surface); border-radius: 20px; box-shadow: 0 30px 80px var(--shadow), 0 0 0 1px var(--line); overflow: hidden; }
+  .x-head { height: 56px; flex-shrink: 0; display: flex; align-items: center; gap: 10px; padding: 0 18px; background: var(--inverse); color: var(--oninverse); font-weight: 600; font-size: 15px; }
+  .x-dot { width: 30px; height: 30px; border-radius: 50%; background: var(--accent); color: var(--onaccent); display: grid; place-items: center; font-size: 13px; }
+  .x-thread { flex: 1; padding: 18px; display: flex; flex-direction: column; justify-content: flex-end; gap: 12px; font-size: 16px; line-height: 1.45; overflow: hidden; }
+  .x-msg { max-width: 85%; padding: 12px 16px; border-radius: 16px 16px 16px 4px; background: var(--bubblebot); align-self: flex-start; animation: pop .35s cubic-bezier(.2,.9,.3,1.3) both; }
+  .x-msg.user { align-self: flex-end; background: var(--bubbleuser); color: var(--onbubbleuser); border-radius: 16px 16px 4px 16px; }
+  .x-chip { display: inline-flex; gap: 6px; margin-top: 10px; padding: 5px 10px; background: var(--surface); border: 1px solid var(--line); border-radius: 6px; font-family: var(--mono); font-size: 12px; animation: pop .35s .25s both; }
+  .x-chip.ok::before { content: "✓"; color: var(--ok); }
+  .x-choices { align-self: flex-end; display: flex; gap: 8px; animation: pop .35s .2s both; }
+  .x-choices span { padding: 9px 14px; border: 1.5px solid var(--accent); color: var(--accenttext); border-radius: 20px; font-size: 14px; font-weight: 600; }
+  .x-choices span.solid { background: var(--inverse); color: var(--oninverse); border-color: var(--inverse); }
+  .x-typing { display: flex; gap: 5px; padding: 14px 16px; }
+  .x-typing i { width: 7px; height: 7px; border-radius: 50%; background: var(--muted); animation: blink 1s infinite; }
+  .x-typing i:nth-child(2) { animation-delay: .15s; } .x-typing i:nth-child(3) { animation-delay: .3s; }
+  .x-caret { display: inline-block; width: 2px; height: 1em; background: currentColor; vertical-align: -2px; margin-left: 1px; animation: blink .8s steps(1) infinite; }
+
+  /* Pages being searched, shown above the typing dots */
+  .x-pages { display: flex; gap: 8px; align-self: flex-start; }
+  .x-page { width: 38px; height: 50px; border-radius: 4px; background: var(--sunk); border: 1px solid var(--line); position: relative; animation: flip .5s both; }
+  .x-page::after { content: ""; position: absolute; inset: 9px 7px auto; height: 18px; background: repeating-linear-gradient(var(--line2) 0 2px, transparent 2px 6px); }
+  .x-page:nth-child(2) { animation-delay: .1s; } .x-page:nth-child(3) { animation-delay: .2s; } .x-page:nth-child(4) { animation-delay: .3s; }
+  .x-page.hit { border: 2px solid var(--ok); background: var(--okbg); }
+  .x-page.hit b { position: absolute; bottom: -18px; left: 0; right: 0; text-align: center; font: 600 11px var(--mono); color: var(--ok); }
+  .x-page.miss { opacity: .35; }
+
+  .x-status { position: absolute; top: 70px; right: 14px; display: flex; align-items: center; gap: 7px; padding: 6px 12px; border-radius: 20px; font-size: 13px; font-weight: 600; background: var(--sunk); transition: background .3s, color .3s; }
+  .x-status::before { content: ""; width: 8px; height: 8px; border-radius: 50%; background: currentColor; }
+  .x-status.ok { background: var(--okbg); color: var(--ok); }
+  .x-status.bad { background: var(--badbg); color: var(--bad); }
+  .x-status.info { background: var(--infobg); color: var(--info); }
+
+  @keyframes pop { from { opacity: 0; transform: translateY(10px) scale(.96); } to { opacity: 1; transform: none; } }
+  @keyframes flip { from { opacity: 0; transform: rotateY(90deg); } to { opacity: 1; transform: none; } }
+  @keyframes blink { 50% { opacity: .25; } }
+
+  /* Section: the pipeline, a dot travels through two gates */
+  .x-center { text-align: center; }
+  .x-pipe { position: relative; margin: var(--gap) auto 0; max-width: 980px; height: 150px; }
+  .x-line { position: absolute; left: 6%; right: 6%; top: 44px; height: 2px; background: var(--line2); }
+  .x-runner { position: absolute; top: 37px; left: 6%; width: 16px; height: 16px; border-radius: 50%; background: var(--accent); box-shadow: 0 0 0 6px var(--accenttint); animation: run 5s cubic-bezier(.6,0,.4,1) infinite; }
+  @keyframes run { 0% { left: 6%; opacity: 0; } 8% { opacity: 1; } 92% { opacity: 1; } 100% { left: calc(94% - 16px); opacity: 0; } }
+  .x-nodes { position: absolute; inset: 0; display: flex; justify-content: space-between; padding: 0 3%; }
+  .x-node { width: 120px; display: flex; flex-direction: column; align-items: center; gap: 14px; }
+  .x-node .ic { width: 88px; height: 88px; border-radius: 22px; display: grid; place-items: center; background: var(--surface); border: 1px solid var(--line); position: relative; z-index: 1; }
+  .x-node b { font-size: 16px; font-weight: 600; line-height: 1.3; }
+  .x-node.gate .ic { border: 2px solid var(--accent); animation: gate 5s infinite; }
+  .x-node.gate:nth-child(2) .ic { animation-delay: 1.4s; }
+  .x-node.gate:nth-child(3) .ic { animation-delay: 2.8s; }
+  @keyframes gate { 0%, 100% { box-shadow: none; } 6% { box-shadow: 0 0 0 10px var(--accenttint); } 14% { box-shadow: none; } }
+  @media (max-width: 700px) { .x-node { width: 76px; } .x-node .ic { width: 60px; height: 60px; border-radius: 16px; } .x-node .ic svg { width: 26px; height: 26px; } .x-node b { font-size: 14px; } }
+  .x-pipe + .x-note { margin-top: 8px; }
+
+  /* Section: the grounding check strikes an unsupported claim */
+  .x-check { max-width: 760px; margin: var(--gap) auto 0; padding: 34px; background: var(--surface); border: 1px solid var(--line); border-radius: 18px; position: relative; overflow: hidden; font-family: var(--serif); font-size: clamp(24px, 3vw, 34px); line-height: 1.35; text-align: left; }
+  .x-scan { position: absolute; top: 0; bottom: 0; width: 80px; left: -80px; background: linear-gradient(90deg, transparent, var(--accenttint), transparent); }
+  .x-check.play .x-scan { animation: scan 1.6s ease-in-out forwards; }
+  @keyframes scan { to { left: 100%; } }
+  .x-claim { border-radius: 6px; padding: 0 4px; transition: background .4s, color .4s, opacity .6s, max-width .8s; }
+  .x-check.done .good { background: var(--okbg); color: var(--ok); }
+  .x-check.done .bad { background: var(--badbg); color: var(--bad); text-decoration: line-through; }
+  .x-check.gone .bad { opacity: 0; }
+  .x-tags { display: flex; gap: 10px; margin-top: 22px; font: 600 13px var(--sans); opacity: 0; transition: opacity .4s .3s; flex-wrap: wrap; }
+  .x-check.done .x-tags { opacity: 1; }
+  .x-tags span { padding: 5px 10px; border-radius: 12px; }
+
+  /* Section: three short statements that reveal on scroll */
+  .x-lines { display: flex; flex-direction: column; align-items: center; gap: 16px; text-align: center; }
+  .x-lines .x-h2 span { color: var(--accenttext); }
+
+  /* Scroll reveal */
+  .rv { opacity: 0; transform: translateY(28px); transition: opacity .7s ease, transform .7s cubic-bezier(.2,.8,.2,1); }
+  .rv.in { opacity: 1; transform: none; }
+  .rv.d1 { transition-delay: .12s; } .rv.d2 { transition-delay: .24s; } .rv.d3 { transition-delay: .36s; }
+
+  .x-final { text-align: center; }
+  .x-final .x-cta { justify-content: center; margin-top: var(--gap); }
+  .x-final .x-note { color: var(--oninverse2); margin-top: 16px; }
+
+  @media (prefers-reduced-motion: reduce) {
+    .rv { opacity: 1; transform: none; transition: none; }
+    .x-runner, .x-node.gate .ic, .x-typing i, .x-caret { animation: none; }
+    .x-msg, .x-chip, .x-choices, .x-page { animation: none; }
+  }
+</style>
+
+<section class="wrap x-hero">
+  <div>
+    <h1 class="rv in">Answers from your manuals.<span class="soft">Or none at all.</span></h1>
+    <p class="x-sub rv in d1">Every answer cited. Every guess refused.</p>
+    <div class="x-cta rv in d2">
+      <a class="btn btn-primary x-btn" href="get-started.html">Try free for 14 days</a>
+      <a class="x-note" href="demo.html">or try the demo yourself →</a>
+    </div>
+  </div>
+  <div class="x-widget rv in d2" aria-label="Animated example conversation" role="img">
+    <div class="x-head"><span class="x-dot">A</span>Acme support</div>
+    <span class="x-status" id="x-status">Listening</span>
+    <div class="x-thread" id="x-thread"></div>
+  </div>
+</section>
+
+<section class="section alt x-center">
+  <div class="wrap">
+    <h2 class="x-h2 rv">Two checks before anyone sees an answer.</h2>
+    <div class="x-pipe rv d1" aria-hidden="true">
+      <div class="x-line"></div>
+      <div class="x-runner"></div>
+      <div class="x-nodes">
+        <div class="x-node"><span class="ic"><svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 4h10a4 4 0 0 1 4 4v12H9a4 4 0 0 1-4-4zM5 16a4 4 0 0 1 4-4h10"/></svg></span><b>Your manuals</b></div>
+        <div class="x-node gate"><span class="ic"><svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="M20 20l-4-4"/></svg></span><b>Found it?</b></div>
+        <div class="x-node gate"><span class="ic"><svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l8 3v6c0 4.5-3.4 8-8 9-4.6-1-8-4.5-8-9V6z"/><path d="M8.5 12l2.5 2.5 4.5-5"/></svg></span><b>Proved it?</b></div>
+        <div class="x-node"><span class="ic"><svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M4 5h16v11h-6l-4 4v-4H4z"/></svg></span><b>Answer + page</b></div>
       </div>
-      <div class="widget" aria-label="Sample support widget">
-        <div class="w-head"><span class="w-avatar">A</span><span style="flex: 1;"><b>Acme support</b><small>Answers from our product manuals</small></span><span aria-hidden="true">×</span></div>
-        <div class="w-scope"><span>Asking about <b>Sample product</b></span><span>Change</span></div>
-        <div class="thread" data-thread aria-live="polite"></div>
-        <div class="w-input"><input type="text" disabled aria-label="Your question" placeholder="In your widget, visitors type their own"><span aria-hidden="true"></span></div>
-      </div>
-      <aside class="trace" data-trace aria-live="polite"></aside>
     </div>
   </div>
 </section>
 
-<section class="section alt" id="how">
+<section class="section x-center">
   <div class="wrap">
-    <div class="section-head">
-      <div><span class="eyebrow">§ 01 · How it works</span><h2>Three steps, and two places it stops.</h2></div>
-      <p class="muted" style="max-width: 420px;">What you just clicked through is the whole pipeline. Most assistants only have the middle step.</p>
-    </div>
-    <div class="grid-3">
-      <div class="step-col"><span class="eyebrow">Step 1</span><h3>Upload your manuals</h3><p class="ink2">PDF, Word or text, read page by page so every answer can point back to where it came from.</p></div>
-      <div class="step-col"><span class="eyebrow">Step 2 · first stop</span><h3>Search, rank, and gate</h3><p class="ink2">If nothing relevant turns up, it refuses before writing a word. If two answers fit, it asks which.</p></div>
-      <div class="step-col accent"><span class="eyebrow">Step 3 · second stop</span><h3>Check, then show</h3><p class="ink2">Every draft is checked against its source pages. A draft that fails never reaches your customer.</p></div>
-    </div>
-  </div>
-</section>
-
-<section class="section" id="self-hosted">
-  <div class="wrap">
-    <div class="split">
-      <div style="display: flex; flex-direction: column; gap: 24px;">
-        <span class="eyebrow">§ 02 · Self-hosted</span>
-        <h2 style="font-size: clamp(34px, 4.2vw, 48px);">Runs on your machine. Your documents never leave it.</h2>
-        <div class="numbered">
-          <div><span class="num">1</span><span><b>Install it</b><br><span class="ink2">A Windows installer, or Docker on any server.</span></span></div>
-          <div><span class="num">2</span><span><b>Paste your licence key</b><br><span class="ink2">Emailed the moment you start a trial or subscribe.</span></span></div>
-          <div><span class="num">3</span><span><b>Connect a model</b><br><span class="ink2">Your own DeepSeek, OpenAI or Claude key, or local models with no internet at all.</span></span></div>
-        </div>
-      </div>
-      <div class="mock-window" aria-hidden="true">
-        <div class="mock-bar"><i></i><i></i><i></i><span style="margin-left: 8px;">GroundedOps · first-time setup</span></div>
-        <div class="mock-body">
-          <span class="eyebrow muted">Step 1 of 3 · Licence</span>
-          <div class="field-mock">GO-PRO-7F3K-Q9LM-2XWD-8HNA</div>
-          <div class="okbox"><span style="color: var(--ok); font-weight: 600;">✓</span><span><b>Licence active</b><span class="ink2">Acme Devices Ltd · Professional · updates included</span></span></div>
-          <div style="display: flex; justify-content: flex-end;"><span class="btn btn-primary" style="min-height: 42px; font-size: 14px;">Continue</span></div>
-        </div>
-      </div>
-    </div>
-    <div class="callout" style="margin-top: 36px;">
-      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3a9 9 0 1 0 0 18 9 9 0 0 0 0-18zM12 11v5M12 8h.01"/></svg>
-      <span><b>Putting the widget on your public website?</b> Visitors’ browsers need to reach it, so it needs an always-on machine or a secure tunnel. The install guide covers both, or add managed hosting and we’ll run it for you.</span>
+    <h2 class="x-h2 rv">Can’t prove it? It’s gone.</h2>
+    <div class="x-check rv d1" id="x-check" aria-label="A draft answer: the supported claim is kept, the unsupported claim is removed">
+      <span class="x-scan"></span>
+      <span class="x-claim good">It runs on 12 V DC.</span>
+      <span class="x-claim bad">It’s fully waterproof.</span>
+      <div class="x-tags"><span style="background: var(--okbg); color: var(--ok);">✓ Installation guide · p. 14</span><span style="background: var(--badbg); color: var(--bad);">✕ Not in any manual</span></div>
     </div>
   </div>
 </section>
 
 <section class="section alt">
+  <div class="wrap x-lines">
+    <p class="x-h2 rv">Cited to the <span>page.</span></p>
+    <p class="x-h2 rv d1">Runs on <span>your machine.</span></p>
+    <p class="x-h2 rv d2">Uses <span>your AI key.</span></p>
+  </div>
+</section>
+
+<section class="section inverse x-final">
   <div class="wrap">
-    <div class="section-head"><div><span class="eyebrow">§ 03 · Your models, your bill</span><h2>You pay us for the software. Never for your AI usage.</h2></div></div>
-    <div class="grid-3">
-      <div class="card"><h3>Bring your own key</h3><p>DeepSeek, OpenAI or Claude, billed to you by the provider. The question and the matching manual passages go to them to write the answer.</p></div>
-      <div class="card dark"><h3>Fully offline</h3><p>Local models on your own hardware. Nothing leaves the building. Answers are slower and simpler than the big cloud models.</p></div>
-      <div class="card"><h3>No surprise bills</h3><p>Daily caps per visitor, approved answers that cost nothing to serve, and an email before your provider credit runs out.</p></div>
-    </div>
+    <h2 class="x-h2 rv">Try it on your own manual.</h2>
+    <div class="x-cta rv d1"><a class="btn btn-primary x-btn" href="get-started.html">Start free</a><a class="btn x-btn x-btn-ghost" href="pricing.html">See pricing</a></div>
+    <p class="x-note rv d2">From $199 a month · 14 days free</p>
   </div>
 </section>
 
-<section class="section">
-  <div class="wrap">
-    <div class="section-head"><div><span class="eyebrow">§ 04 · Gets better every week</span><h2>Approve your top answers once. See exactly what your docs are missing.</h2></div></div>
-    <div class="grid-2">
-      <div class="card">
-        <div style="display: flex; justify-content: space-between; margin-bottom: 14px;"><b>Suggested FAQ answers</b><span class="muted" style="font-size: 13px;">3 to review</span></div>
-        <div class="tile-list">
-          <div class="tile"><span class="grow" style="flex: 1;">How do I clean the sensor?</span><span class="muted" style="font-family: var(--mono); font-size: 12px;">p. 33</span><span class="btn btn-inverse" style="min-height: 36px; padding: 0 14px; font-size: 14px;">Approve</span></div>
-          <div class="tile"><span style="flex: 1;">What does error code E07 mean?</span><span class="muted" style="font-family: var(--mono); font-size: 12px;">p. 42</span><span class="btn btn-inverse" style="min-height: 36px; padding: 0 14px; font-size: 14px;">Approve</span></div>
-          <div class="tile approved-row"><span style="flex: 1;">What does error code E04 mean?</span><span style="font-size: 13px; font-weight: 600; color: var(--ok);">✓ Approved · served instantly</span></div>
-        </div>
-      </div>
-      <div class="card">
-        <div style="display: flex; justify-content: space-between; margin-bottom: 6px;"><b>Questions it couldn’t answer</b><span class="muted" style="font-size: 13px;">This week</span></div>
-        <div class="row-list">
-          <div class="row"><b style="width: 44px; font-family: var(--mono); font-weight: 500;">23×</b><span class="grow">Can I use it outdoors?</span><a href="#">Fix this →</a></div>
-          <div class="row"><b style="width: 44px; font-family: var(--mono); font-weight: 500;">14×</b><span class="grow">Can firmware be updated over USB?</span><a href="#">Fix this →</a></div>
-          <div class="row"><b style="width: 44px; font-family: var(--mono); font-weight: 500;">9×</b><span class="grow">How long is the warranty?</span><a href="#">Fix this →</a></div>
-        </div>
-        <p class="muted" style="font-size: 14px; margin-top: 14px;">Every refusal is logged, so you know what to write next.</p>
-      </div>
-    </div>
-  </div>
-</section>
+<script>
+(function () {
+  var reduce = window.matchMedia && matchMedia('(prefers-reduced-motion: reduce)').matches;
 
-<section class="section alt">
-  <div class="wrap">
-    <h2 style="font-size: 30px; margin-bottom: 28px;">Built to get past your IT team.</h2>
-    <div class="grid-4">
-      <span>Installed on your own hardware</span><span>Only the widget faces the internet</span><span>SSO with Microsoft or Google</span><span>Owner, Admin and Viewer roles</span>
-    </div>
-  </div>
-</section>
+  // Scroll reveal
+  var io = 'IntersectionObserver' in window ? new IntersectionObserver(function (es) {
+    es.forEach(function (e) { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } });
+  }, { threshold: 0.2 }) : null;
+  document.querySelectorAll('.rv').forEach(function (el) { io ? io.observe(el) : el.classList.add('in'); });
 
-<section class="section">
-  <div class="wrap roi" data-roi>
-    <div>
-      <span class="eyebrow">§ 05 · Do the sum</span>
-      <h2 style="font-size: clamp(30px, 3.6vw, 40px); margin-top: 12px;">What “it’s in the manual” tickets cost you.</h2>
-      <label class="slider"><span><span>Support tickets per month</span><b data-out="tickets"></b></span><input type="range" name="tickets" min="100" max="5000" step="100" value="1000"></label>
-      <label class="slider"><span><span>Share the manual already answers</span><b data-out="pct"></b></span><input type="range" name="pct" min="5" max="80" step="5" value="30"></label>
-      <label class="slider"><span><span>Cost to handle one ticket</span><b data-out="cost"></b></span><input type="range" name="cost" min="5" max="60" step="1" value="15"></label>
-    </div>
-    <div class="roi-out">
-      <div style="display: flex; flex-direction: column; gap: 10px;">
-        <p>Estimated monthly saving</p>
-        <span class="big" data-out="saving"></span>
-        <p>≈ <span data-out="deflected"></span> tickets answered by the assistant</p>
-        <p>Professional licence: <span class="price-tbd">$599</span> / month</p>
-      </div>
-      <small>An estimate, not a promise. Assumes the assistant resolves half of the tickets your manuals already answer. Your AI provider’s usage is extra, or zero offline.</small>
-    </div>
-  </div>
-</section>
+  // Grounding check plays once when it scrolls into view
+  var chk = document.getElementById('x-check');
+  var play = function () {
+    if (reduce) { chk.classList.add('done', 'gone'); return; }
+    chk.classList.add('play');
+    setTimeout(function () { chk.classList.add('done'); }, 1500);
+    setTimeout(function () { chk.classList.add('gone'); }, 3300);
+  };
+  if ('IntersectionObserver' in window) {
+    new IntersectionObserver(function (es, o) { if (es[0].isIntersecting) { o.disconnect(); setTimeout(play, 500); } }, { threshold: 0.6 }).observe(chk);
+  } else { play(); }
 
-<section class="section alt">
-  <div class="wrap">
-    <div class="section-head"><div><span class="eyebrow">§ 06 · Pricing</span><h2>One licence. Updates and support included.</h2></div><a href="pricing.html">Compare plans →</a></div>
-    <div class="plans">
-      <div class="plan"><h3>Starter</h3><div class="price"><strong class="price-tbd">$199</strong><span class="muted">/ month</span></div><p class="ink2">One installation, one website, email support.</p><a class="btn btn-outline" href="get-started.html?plan=starter">Try free for 14 days</a></div>
-      <div class="plan featured"><div style="display: flex; justify-content: space-between; align-items: center;"><h3>Professional</h3><span class="pill accent">Most teams</span></div><div class="price"><strong class="price-tbd">$599</strong><span class="muted">/ month</span></div><p class="ink2">Production + staging, 3 websites, SSO, priority support.</p><a class="btn btn-primary" href="get-started.html?plan=pro">Try free for 14 days</a></div>
-      <div class="plan"><h3>Enterprise</h3><div class="price"><span class="muted">from</span><strong class="price-tbd">$18k</strong><span class="muted">/ year</span></div><p class="ink2">Offline models, unlimited installs, named contact.</p><a class="btn btn-outline" href="mailto:hello@groundedops.example">Talk to us</a></div>
-    </div>
-    <p class="muted" style="font-size: 14px; margin-top: 18px;">Plus your AI provider’s usage, billed to you directly. None in offline mode.</p>
-  </div>
-</section>
+  // The self-playing widget: three short scenes on a loop
+  var thread = document.getElementById('x-thread');
+  var status = document.getElementById('x-status');
+  var SCENES = [
+    { q: 'What voltage does it need?', pages: 'hit', a: '12 V DC, 2 A minimum.', chip: 'Installation guide · p. 14', tag: ['ok', 'Cited'] },
+    { q: 'Can I use it outdoors?', pages: 'miss', a: 'That’s not in the manual. Want a person?', choices: [['solid', 'Email support']], tag: ['bad', 'Refused, honestly'] },
+    { q: 'How do I reset it?', pages: 'two', a: 'Restart, or factory reset?', choices: [['', 'Restart'], ['', 'Factory reset']], tag: ['info', 'Asked first'] }
+  ];
+  function el(tag, cls, html) { var n = document.createElement(tag); if (cls) n.className = cls; if (html != null) n.innerHTML = html; return n; }
+  function setStatus(cls, text) { status.className = 'x-status ' + (cls || ''); status.textContent = text; }
+  function wait(ms) { return new Promise(function (r) { setTimeout(r, reduce ? 0 : ms); }); }
 
-<section class="section">
-  <div class="wrap faq">
-    <div><span class="eyebrow">§ 07 · Questions</span><h2 style="font-size: clamp(32px, 4vw, 44px); margin-top: 12px;">What buyers ask us first.</h2></div>
-    <div>
-      <details open><summary>What am I paying for?</summary><p>The software licence, every update while you subscribe, and support. Your AI usage is billed by your provider directly, and there is none in offline mode.</p></details>
-      <details><summary>Do I need an AI key?</summary><p>Either a key from DeepSeek, OpenAI or Claude, or local models on your own hardware on the Enterprise plan. You can switch at any time.</p></details>
-      <details><summary>Where do my documents go?</summary><p>They stay on the machine you install it on. With a cloud key, the question and the matching passages are sent to that provider to write the answer. Offline, nothing leaves.</p></details>
-      <details><summary>What happens if I stop paying?</summary><p>Your installation keeps working for 14 days, then the widget pauses. Your data stays on your machine, and the console still opens so you can export it.</p></details>
-      <details><summary>What does it run on?</summary><p>Windows 10 or 11 with the installer, or any server that runs Docker. The public widget needs that machine to be reachable, or a secure tunnel.</p></details>
-      <details><summary>Can you host it for me?</summary><p>Yes. Managed hosting is an add-on: we run your installation on our server with a public address.</p></details>
-      <details><summary>Does it work with WordPress?</summary><p>Yes. There is a WordPress plugin, and a single script tag for any other site.</p></details>
-    </div>
-  </div>
-</section>
+  async function typeInto(node, text) {
+    var caret = el('span', 'x-caret');
+    node.appendChild(caret);
+    for (var i = 0; i < text.length; i++) {
+      caret.insertAdjacentText('beforebegin', text[i]);
+      await wait(38);
+    }
+    caret.remove();
+  }
 
-<section class="section inverse cta">
-  <div class="wrap">
-    <h2>Grounded, or it says nothing.</h2>
-    <p>Download it, point it at one manual, and ask it something hard.</p>
-    <div class="btns"><a class="btn btn-primary" href="get-started.html">Try free for 14 days</a><a class="btn btn-outline" href="mailto:hello@groundedops.example">Book a demo</a></div>
-  </div>
-</section>
+  async function scene(s) {
+    thread.innerHTML = '';
+    setStatus('', 'Listening');
+    var user = el('div', 'x-msg user');
+    thread.appendChild(user);
+    await typeInto(user, s.q);
+    await wait(300);
+    setStatus('', 'Searching the manuals');
+    var pages = el('div', 'x-pages');
+    for (var i = 0; i < 4; i++) pages.appendChild(el('span', 'x-page'));
+    thread.appendChild(pages);
+    var typing = el('div', 'x-msg x-typing', '<i></i><i></i><i></i>');
+    thread.appendChild(typing);
+    await wait(1100);
+    var ps = pages.children;
+    if (s.pages === 'hit') { ps[2].classList.add('hit'); ps[2].innerHTML = '<b>p. 14</b>'; [0, 1, 3].forEach(function (k) { ps[k].classList.add('miss'); }); }
+    else if (s.pages === 'two') { ps[1].classList.add('hit'); ps[3].classList.add('hit'); ps[1].innerHTML = '<b>p. 21</b>'; ps[3].innerHTML = '<b>p. 22</b>'; [0, 2].forEach(function (k) { ps[k].classList.add('miss'); }); }
+    else { for (var j = 0; j < 4; j++) ps[j].classList.add('miss'); }
+    await wait(900);
+    typing.remove();
+    var ans = el('div', 'x-msg');
+    ans.textContent = s.a;
+    if (s.chip) ans.appendChild(el('div', 'x-chip ok', s.chip));
+    thread.appendChild(ans);
+    if (s.choices) {
+      var c = el('div', 'x-choices');
+      s.choices.forEach(function (ch) { c.appendChild(el('span', ch[0], ch[1])); });
+      thread.appendChild(c);
+    }
+    setStatus(s.tag[0], s.tag[1]);
+    await wait(3400);
+  }
+
+  async function loop() {
+    if (reduce) { await scene(SCENES[0]); return; }
+    for (var k = 0; ; k = (k + 1) % SCENES.length) { await scene(SCENES[k]); }
+  }
+  loop();
+})();
+</script>
