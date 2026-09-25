@@ -21,7 +21,7 @@ WIDGET = {
     'name': 'GroundedOps',
     'welcome': 'Hi! Ask me anything about GroundedOps: what it does, pricing, licensing, '
                'installing it, or where your data goes. I’ll show you where each answer comes from.',
-    'color': '#1A262C',
+    'color': '#8A5A2B',
     'intro_options': [
         {'id': 'opt_product', 'label': 'Ask about GroundedOps', 'action': 'product'},
         {'id': 'opt_sales', 'label': 'Talk to the team', 'action': 'sales'},

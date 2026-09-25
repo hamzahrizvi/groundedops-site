@@ -16,7 +16,7 @@ window.GO_BOT_API = 'https://pastor-instantly-electrical-proxy.trycloudflare.com
   s.async = true;
   s.setAttribute('data-api', api);
   s.setAttribute('data-title', 'GroundedOps');
-  s.setAttribute('data-accent', '#1A262C');
+  s.setAttribute('data-accent', '#8A5A2B');
   s.setAttribute('data-agent-name', 'GroundedOps assistant');
   s.setAttribute('data-sales-email', 'hello@groundedops.example');
   document.body.appendChild(s);

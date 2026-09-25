@@ -319,3 +319,10 @@ code.block { display: block; padding: 12px 14px; background: var(--codebg); colo
 .foot-cols a { color: var(--ink); text-decoration: none; }
 .foot-cols .eyebrow { color: var(--muted); }
 .foot-base { display: flex; justify-content: space-between; gap: 16px; flex-wrap: wrap; margin-top: 40px; padding-top: 20px; border-top: 1px solid var(--line); font-size: 13px; color: var(--muted); }
+
+/* "Ask us" chat launcher (the GroundedOps widget's own button). Its black
+   drop shadow disappears on the dark theme, so dark mode gets a bronze ring. */
+:root[data-theme="dark"] .go-launch { box-shadow: 0 0 0 2px var(--accent), 0 8px 28px rgba(0,0,0,.55) !important; }
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) .go-launch { box-shadow: 0 0 0 2px var(--accent), 0 8px 28px rgba(0,0,0,.55) !important; }
+}
