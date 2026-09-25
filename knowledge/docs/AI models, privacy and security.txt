@@ -1,29 +1,25 @@
 AI models, privacy and security
 
 Which AI models it uses
-GroundedOps writes answers with the AI model you choose:
-- Your own cloud key: DeepSeek, OpenAI or Claude (Anthropic). You create the key with the provider, paste it into GroundedOps, and the provider bills you directly for what you use. You can switch provider at any time.
-- Offline local models: models that run on your own hardware through Ollama. Nothing leaves the building. Answers are slower and simpler than the large cloud models. Offline models are part of the Enterprise plan.
-Your visitors see the same widget whichever you choose.
+GroundedOps writes answers with the AI model you choose. The first option is your own cloud key from DeepSeek, OpenAI or Claude (Anthropic): you create the key with the provider, paste it into GroundedOps, and the provider bills you directly for what you use. You can switch provider at any time. The second option is offline local models that run on your own hardware through Ollama, so nothing leaves the building; answers are slower and simpler than the large cloud models, and offline models are part of the Enterprise plan. Your visitors see the same widget whichever you choose.
 
 Where your data goes
-- Your documents are stored on the machine where you install GroundedOps. They are not uploaded to GroundedOps the company.
-- With a cloud AI key, each question and the matching passages from your manuals are sent to that AI provider so it can write the answer. The full documents are not sent.
-- With offline models, nothing is sent anywhere.
-- Approved FAQ answers are served without any AI call.
+Your documents are stored on the machine where you install GroundedOps. They are not uploaded to GroundedOps the company. With a cloud AI key, each question and the matching passages from your manuals are sent to that AI provider so it can write the answer; the full documents are not sent. With offline models, nothing is sent anywhere. Approved FAQ answers are served without any AI call.
 
 What is exposed to the internet
 Only the website widget needs to be reachable from the internet. The admin console, where documents are uploaded, FAQ answers are approved and settings are changed, is meant to stay on your own network. The recommended setup forwards only the widget's address to the public internet.
 
-Admin accounts and sign-in
-- Three roles: Owner can do everything including managing accounts; Admin does day-to-day work on documents and FAQ answers but cannot manage accounts; Viewer can use the test chat only.
-- Sign-in with Microsoft (Entra ID) or Google Workspace work accounts is supported on Professional and Enterprise. Signing in with a work account does not create an account on its own: an Owner has to create or approve it first.
-- Passwords are stored as salted hashes, never in plain text, and changing a password or disabling an account signs that account out everywhere.
+Admin roles
+There are three roles. An Owner can do everything, including managing accounts. An Admin does day-to-day work on documents and FAQ answers but cannot manage accounts. A Viewer can use the test chat only.
+
+Single sign-on
+Sign-in with Microsoft (Entra ID) or Google Workspace work accounts is supported on Professional and Enterprise. Signing in with a work account does not create an account on its own: an Owner has to create or approve it first.
+
+Passwords
+Passwords are stored as salted hashes, never in plain text, and changing a password or disabling an account signs that account out everywhere.
 
 Keeping AI costs under control
-- Daily limits per visitor, with separate allowances for anonymous visitors, signed-in members and your own staff.
-- Limits per conversation, so a single visitor cannot use up the daily allowance in one runaway chat.
-- Email alerts to the account Owners before your AI provider credit runs out, for providers that report a balance.
+Each kind of visitor has its own daily limit: anonymous visitors, signed-in members and your own staff are set separately. There is also a limit per conversation, so a single visitor cannot use up the daily allowance in one runaway chat. For AI providers that report a balance, the account Owners are emailed before the provider credit runs out.
 
 Certifications
 GroundedOps does not currently hold certifications such as SOC 2 or ISO 27001. Because it is self-hosted, your documents stay inside your own security controls.

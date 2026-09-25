@@ -1,8 +1,7 @@
 Installation and requirements
 
 Ways to install
-- Windows installer: for Windows 10 or 11, 64-bit. This is the simplest option for a single machine. The installer opens the setup page in your browser when it finishes.
-- Docker: for a Linux server or a small cloud machine.
+There are two ways to install GroundedOps. The Windows installer is for Windows 10 or 11, 64-bit, and is the simplest option for a single machine; it opens the setup page in your browser when it finishes. Docker is for a Linux server or a small cloud machine, including servers at cloud providers such as AWS, Azure or Google Cloud.
 
 First-time setup
 Setup takes three steps:

@@ -11,18 +11,14 @@ The tagline is: Grounded, or it says nothing.
 Who it is for
 GroundedOps is built for companies whose products come with long technical manuals: spec tables, part numbers, fault codes, installation procedures and troubleshooting steps. Typical buyers are support and customer experience teams who answer the same "it's in the manual" questions every day, documentation teams who want to know where their manuals are weak, and IT and security teams who need documents to stay on their own hardware.
 
-The main features
-- Answers only from your own documents, with page-level citations.
-- A grounding check on every generated answer; answers that fail it are never shown.
-- Honest refusals that route the visitor to a person.
-- Clarifying questions when a question is ambiguous.
-- Step-by-step procedures kept in order, copied from the manual rather than rewritten.
-- A curated FAQ: your team approves answers to common questions once, and they are served instantly, word for word, with no AI call.
-- A gaps report: every question the assistant could not answer is logged, so you know what to add to your documentation next.
-- Cross-product questions, such as "which of your products run on 24 V?", answered from your catalogue and spec tables without generating text.
-- A website widget that works on any site with one script tag, plus a WordPress plugin.
-- Your choice of AI model: your own DeepSeek, OpenAI or Claude key, or local models that run fully offline.
-- Admin accounts with Owner, Admin and Viewer roles, and sign-in with Microsoft or Google work accounts.
+Answering features
+GroundedOps answers only from your own documents, with page-level citations. Every generated answer goes through a grounding check, and answers that fail it are never shown. When it cannot answer, it refuses honestly and routes the visitor to a person. When a question is ambiguous, it asks a clarifying question. Step-by-step procedures are kept in order, copied from the manual rather than rewritten. Cross-product questions, such as "which of your products run on 24 V?", are answered from your catalogue and spec tables without generating text.
+
+Improving over time
+The curated FAQ lets your team approve answers to common questions once; approved answers are served instantly, word for word, with no AI call. The gaps report logs every question the assistant could not answer, so you know what to add to your documentation next.
+
+Website, models and accounts
+The website widget works on any site with one script tag, and there is a WordPress plugin. You choose the AI model: your own DeepSeek, OpenAI or Claude key, or local models that run fully offline. Admin accounts have Owner, Admin and Viewer roles, and people can sign in with Microsoft or Google work accounts.
 
 How it is sold
 GroundedOps is sold as a self-hosted licence with a monthly or annual fee. The licence covers the software, every update while you subscribe, and support. Your AI usage is billed by your AI provider directly, or there is none at all if you use offline local models. Every plan starts with a 14-day free trial with no card needed.

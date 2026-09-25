@@ -8,39 +8,26 @@ You pay GroundedOps a fixed licence fee for the software, every update while you
 Free trial
 Every plan starts with a 14-day free trial. No card is needed. You receive a trial licence key by email and download the installer straight away. The trial includes Professional features. After 14 days the widget pauses until you choose a plan; nothing is charged automatically.
 
-Starter: 199 US dollars per month, or 1,990 dollars per year
-- 1 installation
-- 1 website with the widget
-- Up to 15 products in your catalogue
-- 2 admin seats
-- All updates while subscribed
-- Email support
+The Starter plan
+Starter costs 199 US dollars per month, or 1,990 dollars per year. It includes 1 installation, 1 website with the widget, up to 15 products in your catalogue, 2 admin seats, all updates while you subscribe, and email support.
 
-Professional: 599 US dollars per month, or 5,990 dollars per year
-- 2 installations, for example production and a staging copy for testing changes
-- 3 websites with the widget
-- Unlimited products
-- 10 admin seats
-- Sign-in with Microsoft or Google (SSO)
-- Remove "Powered by GroundedOps" from the widget
-- All updates while subscribed
-- Priority support
+The Professional plan
+Professional costs 599 US dollars per month, or 5,990 dollars per year. It includes 2 installations, for example production and a staging copy for testing changes, 3 websites with the widget, unlimited products, 10 admin seats, sign-in with Microsoft or Google (SSO), the option to remove "Powered by GroundedOps" from the widget, all updates while you subscribe, and priority support.
 
-Enterprise: from 18,000 US dollars per year
-- Unlimited installations and websites
-- Offline local models, set up with you
-- Unlimited admin seats and SSO
-- A named support contact and agreed response times
-- Custom licence terms
-Enterprise is quoted after a conversation about your deployment.
+The Enterprise plan
+Enterprise starts at 18,000 US dollars per year and is quoted after a conversation about your deployment. It includes unlimited installations and websites, offline local models set up with you, unlimited admin seats with SSO, a named support contact with agreed response times, and custom licence terms.
+
+Websites per plan
+Starter allows the widget on 1 website, Professional on 3 websites, and Enterprise on as many websites as you need. If you need more websites than Professional allows, Enterprise is the plan for that.
 
 Annual billing
 Paying annually costs the same as 10 months, so you get 2 months free.
 
+Discounts
+The standard discount is annual billing, which gives you 2 months free. For larger deployments, several sites, or other discount questions, talk to the GroundedOps team.
+
 Add-ons
-- Setup and onboarding: 1,500 to 5,000 dollars, one-off. We load your manuals, build your catalogue and approve your first FAQ answers with you. Quoted after a short call.
-- Managed hosting: 149 dollars per month. We run your installation on our server with a public address, so the website widget is always reachable.
-- Extra support hours: 120 dollars per hour, for custom integration, tuning for your documents, or training your team.
+Setup and onboarding is a one-off service costing 1,500 to 5,000 dollars, quoted after a short call: we load your manuals, build your catalogue and approve your first FAQ answers with you. Managed hosting costs 149 dollars per month: we run your installation on our server with a public address, so the website widget is always reachable. Extra support hours cost 120 dollars per hour, for custom integration, tuning for your documents, or training your team.
 
 Features included in every plan
 Grounding checks, page citations, clarifying questions, honest refusals, the curated FAQ, the gaps report, and the choice of your own DeepSeek, OpenAI or Claude key are included in every plan.

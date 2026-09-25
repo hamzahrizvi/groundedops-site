@@ -15,16 +15,13 @@ If the question matches an answer your team has approved, that answer is served 
 GroundedOps searches the product's documents two ways at once, by keywords and by meaning, merges the results, and reranks them so the most relevant passages come first.
 
 5. The confidence gate: the first place it stops
-Before writing anything, GroundedOps judges how well the search went:
-- If nothing relevant was found, it refuses straight away and never writes an answer.
-- If two different answers fit, for example a restart and a factory reset, it asks the visitor which they mean.
-- If the match is strong, it continues.
+Before writing anything, GroundedOps judges how well the search went. If nothing relevant was found, it refuses straight away and never writes an answer. If two different answers fit, for example a restart and a factory reset, it asks the visitor which they mean. If the match is strong, it continues.
 
 6. Writing the answer
 For procedures and checklists, the steps are taken from the manual in order rather than rewritten. For other questions, the AI model writes an answer using only the passages that were found.
 
 7. The grounding check: the second place it stops
-Every generated answer is checked against the passages it came from. If the answer says something those pages do not support, the answer is discarded and the visitor is told honestly that the documents do not confirm it, with a route to a person.
+The grounding check is how GroundedOps makes sure an answer is supported by the documents. Every generated answer is checked against the passages it came from. If the answer says something those pages do not support, the answer is discarded and the visitor is told honestly that the documents do not confirm it, with a route to a person.
 
 8. The answer is shown with its sources
 The answer appears with the manual name and page number for each source. One click opens the original document at that page.

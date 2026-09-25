@@ -513,5 +513,30 @@
   "topic": "Pricing",
   "q": "How many admin users does each plan include?",
   "a": "Starter includes 2 admin seats, Professional includes 10, and Enterprise is unlimited."
+ },
+ {
+  "topic": "Pricing",
+  "q": "Are there any discounts available?",
+  "a": "The standard discount is annual billing: paying yearly costs the same as 10 months, so you get 2 months free (Starter $1,990 and Professional $5,990 a year). For larger deployments, several sites or other discount questions, email the team at hello@groundedops.example."
+ },
+ {
+  "topic": "Pricing",
+  "q": "Do you offer discounts?",
+  "a": "The standard discount is annual billing: paying yearly costs the same as 10 months, so you get 2 months free (Starter $1,990 and Professional $5,990 a year). For larger deployments, several sites or other discount questions, email the team at hello@groundedops.example."
+ },
+ {
+  "topic": "Pricing",
+  "q": "Is there a discount for startups, non-profits or education?",
+  "a": "There is no published discount for those groups. Annual billing gives everyone 2 months free, and you can email hello@groundedops.example to ask about your situation."
+ },
+ {
+  "topic": "Pricing",
+  "q": "Do you offer volume pricing?",
+  "a": "Starter covers 1 website and Professional covers 3. For more websites or installations than that, Enterprise (from $18,000 a year) is unlimited and is quoted for your deployment. Email hello@groundedops.example to talk about volume."
+ },
+ {
+  "topic": "Pricing",
+  "q": "What if I need the widget on lots of websites?",
+  "a": "Starter covers 1 website and Professional covers 3. For more websites or installations than that, Enterprise (from $18,000 a year) is unlimited and is quoted for your deployment. Email hello@groundedops.example to talk about volume."
  }
 ]
