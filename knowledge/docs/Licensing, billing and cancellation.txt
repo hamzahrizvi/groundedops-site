@@ -1,0 +1,31 @@
+Licensing, billing and cancellation
+
+Your licence key
+When you start a trial or subscribe, you receive a licence key by email. You paste the key into GroundedOps during first-time setup, and that machine becomes one of your installations. You can also download a licence file for machines that have no internet connection.
+
+Installations
+Each plan allows a number of installations: Starter allows 1, Professional allows 2, and Enterprise is unlimited. Your account page lists each installation with its machine name, the version it runs and when it last checked its licence.
+
+Moving to a new server
+Release the old installation from your account page, then activate the new machine with the same key.
+
+If a key is shared by mistake
+You can issue a new key from your account page. The old key stops working 7 days later, which gives you time to update your installations.
+
+Does it need the internet?
+GroundedOps checks its licence from time to time. Sites with no internet access can activate with a licence file instead. If you use a cloud AI provider, the machine also needs internet access to reach that provider.
+
+Updates
+Every update is included while your licence is active. New versions are listed on the Downloads page of your account with release notes.
+
+If a payment fails
+Your installations keep working for 14 days while you update your card. The account owner is emailed before anything pauses. After the 14 days, the widget pauses until the licence is renewed.
+
+Changing plan
+You can change plan from the Billing page. If you move to a smaller plan while over its limits, for example with 2 installations on a plan that allows 1, you are shown exactly what changes and choose what to keep before you confirm. Nothing is deleted.
+
+Cancelling
+You can cancel from the Billing page at any time. Everything keeps working until the end of the period you have paid for, and you are not charged again. When the licence expires, updates and support stop; after a further 14 days the widget pauses and shows your support contact instead. Your documents, approved FAQ answers and logs stay on your own machines throughout. GroundedOps never held them, so there is nothing to hand back or delete.
+
+Refunds and custom terms
+For refund questions or custom licence terms, contact the GroundedOps team.

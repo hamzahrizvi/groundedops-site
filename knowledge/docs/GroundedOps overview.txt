@@ -1,0 +1,28 @@
+GroundedOps overview
+
+What GroundedOps is
+GroundedOps is a support assistant that answers questions from your own product manuals and technical documents. You install it on your own machine, load your manuals into it, and put a chat widget on your website. Your customers ask questions in their own words and get answers taken from your documents, each one citing the manual and the exact page it came from, with the original document one click away.
+
+What makes it different
+Most chatbots always produce an answer, even when they do not know. GroundedOps is built the other way round. Every answer is checked against the pages it came from before it is shown. If the documents do not back the answer up, the answer is not shown: the assistant says it does not know and offers the visitor a route to a person, such as emailing your support team. If a question could mean two different things, it asks which one the visitor means instead of guessing.
+
+The tagline is: Grounded, or it says nothing.
+
+Who it is for
+GroundedOps is built for companies whose products come with long technical manuals: spec tables, part numbers, fault codes, installation procedures and troubleshooting steps. Typical buyers are support and customer experience teams who answer the same "it's in the manual" questions every day, documentation teams who want to know where their manuals are weak, and IT and security teams who need documents to stay on their own hardware.
+
+The main features
+- Answers only from your own documents, with page-level citations.
+- A grounding check on every generated answer; answers that fail it are never shown.
+- Honest refusals that route the visitor to a person.
+- Clarifying questions when a question is ambiguous.
+- Step-by-step procedures kept in order, copied from the manual rather than rewritten.
+- A curated FAQ: your team approves answers to common questions once, and they are served instantly, word for word, with no AI call.
+- A gaps report: every question the assistant could not answer is logged, so you know what to add to your documentation next.
+- Cross-product questions, such as "which of your products run on 24 V?", answered from your catalogue and spec tables without generating text.
+- A website widget that works on any site with one script tag, plus a WordPress plugin.
+- Your choice of AI model: your own DeepSeek, OpenAI or Claude key, or local models that run fully offline.
+- Admin accounts with Owner, Admin and Viewer roles, and sign-in with Microsoft or Google work accounts.
+
+How it is sold
+GroundedOps is sold as a self-hosted licence with a monthly or annual fee. The licence covers the software, every update while you subscribe, and support. Your AI usage is billed by your AI provider directly, or there is none at all if you use offline local models. Every plan starts with a 14-day free trial with no card needed.

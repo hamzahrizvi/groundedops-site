@@ -1,0 +1,16 @@
+Managing your knowledge base
+
+Uploading documents
+Upload PDF, Word (DOCX) or plain text files in the admin console. Each document is read page by page and indexed; its status shows while it is being processed. Documents can be re-indexed or deleted at any time.
+
+Building the catalogue
+The catalogue is how visitors choose what their question is about. It has two levels: categories, such as a product range, and products within them. Each document is attached to a product. A document that applies to a whole category, such as a shared protocol manual, can be placed in the category's shared section so that it is searched for every product in that category. Products can have alternative names, so a visitor who types a model's nickname still finds it.
+
+The curated FAQ
+GroundedOps suggests question-and-answer pairs from your documents. Your team reviews them, edits the wording if needed, and approves them. Approved answers are served instantly and word for word, with no AI call, and appear as suggested questions in the widget. Hand-written FAQ answers are never overwritten by later suggestions.
+
+The gaps report
+Every question the assistant could not answer is logged. The gaps report groups similar questions and counts how often each comes up, so you can fix the most common gaps first, either by adding the missing information to a document or by writing an approved FAQ answer.
+
+Backups
+The admin console can create and restore backups of your documents, FAQ answers, catalogue and settings.

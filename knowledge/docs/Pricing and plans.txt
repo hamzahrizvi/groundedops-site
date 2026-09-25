@@ -1,0 +1,49 @@
+Pricing and plans
+
+Note: this website is a staging preview. The prices below are the current proposed prices and may change before launch.
+
+How pricing works
+You pay GroundedOps a fixed licence fee for the software, every update while you subscribe, and support. The fee does not change with how many questions your visitors ask. Your AI usage is separate: if you use your own DeepSeek, OpenAI or Claude key, that provider bills you directly for the answers it writes. Approved FAQ answers and refusals make no AI call at all. If you use offline local models, there is no AI bill.
+
+Free trial
+Every plan starts with a 14-day free trial. No card is needed. You receive a trial licence key by email and download the installer straight away. The trial includes Professional features. After 14 days the widget pauses until you choose a plan; nothing is charged automatically.
+
+Starter: 199 US dollars per month, or 1,990 dollars per year
+- 1 installation
+- 1 website with the widget
+- Up to 15 products in your catalogue
+- 2 admin seats
+- All updates while subscribed
+- Email support
+
+Professional: 599 US dollars per month, or 5,990 dollars per year
+- 2 installations, for example production and a staging copy for testing changes
+- 3 websites with the widget
+- Unlimited products
+- 10 admin seats
+- Sign-in with Microsoft or Google (SSO)
+- Remove "Powered by GroundedOps" from the widget
+- All updates while subscribed
+- Priority support
+
+Enterprise: from 18,000 US dollars per year
+- Unlimited installations and websites
+- Offline local models, set up with you
+- Unlimited admin seats and SSO
+- A named support contact and agreed response times
+- Custom licence terms
+Enterprise is quoted after a conversation about your deployment.
+
+Annual billing
+Paying annually costs the same as 10 months, so you get 2 months free.
+
+Add-ons
+- Setup and onboarding: 1,500 to 5,000 dollars, one-off. We load your manuals, build your catalogue and approve your first FAQ answers with you. Quoted after a short call.
+- Managed hosting: 149 dollars per month. We run your installation on our server with a public address, so the website widget is always reachable.
+- Extra support hours: 120 dollars per hour, for custom integration, tuning for your documents, or training your team.
+
+Features included in every plan
+Grounding checks, page citations, clarifying questions, honest refusals, the curated FAQ, the gaps report, and the choice of your own DeepSeek, OpenAI or Claude key are included in every plan.
+
+Paying by invoice
+Invoice payment is available on annual Professional and Enterprise plans.

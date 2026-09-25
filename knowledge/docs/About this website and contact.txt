@@ -1,0 +1,13 @@
+About this website and how to contact GroundedOps
+
+This website
+This website is a staging preview of the GroundedOps website. Prices shown are proposed prices and may change, and the checkout does not take payment or send licence keys yet.
+
+This chat
+The assistant you are chatting with on this website runs on GroundedOps itself. It answers only from GroundedOps's own documentation and approved FAQ answers, cites where each answer came from, and says so when it does not know.
+
+Contacting the team
+To book a demo, ask about Enterprise, discuss setup and onboarding, or ask anything this assistant cannot answer, email hello@groundedops.example.
+
+Trying it
+The fastest way to see GroundedOps working on your own manuals is the 14-day free trial: no card needed, and you receive a trial licence key by email.

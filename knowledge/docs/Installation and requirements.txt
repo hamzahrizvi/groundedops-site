@@ -1,0 +1,25 @@
+Installation and requirements
+
+Ways to install
+- Windows installer: for Windows 10 or 11, 64-bit. This is the simplest option for a single machine. The installer opens the setup page in your browser when it finishes.
+- Docker: for a Linux server or a small cloud machine.
+
+First-time setup
+Setup takes three steps:
+1. Activate your licence by pasting the key from your email, or by using a licence file on a machine without internet.
+2. Connect a model: either your own DeepSeek, OpenAI or Claude API key, or offline local models through Ollama.
+3. Upload your first manual. Start with the one your support team is asked about most.
+After that you can try questions in the built-in test chat, name your products, approve a few FAQ answers, and add the widget to your website.
+
+Putting the widget on a public website
+The widget runs in your website visitors' browsers, so it must be able to reach your GroundedOps installation. That means the installation needs to be on an always-on machine with a public address, or behind a secure tunnel. An office PC that is switched off at night, or that sits behind a normal office router, will not work on its own for a public website. The install guide covers both the tunnel approach and running a small server. Alternatively, the managed hosting add-on runs your installation on our server for you.
+Internal use, such as your support staff using the test chat, works on any machine on your own network.
+
+System requirements
+GroundedOps runs its own search, ranking and answer-checking models locally, so it needs a reasonably capable machine. Exact memory and disk requirements depend on how many documents you load; contact the team to size it for your library. Offline local models need considerably more power, and a GPU is recommended for them.
+
+Supported document formats
+PDF, Word (DOCX) and plain text (TXT). Pages are kept so that citations point to the exact page. Scanned pages that are only images, with no text in them, cannot be read; upload a text version of those documents.
+
+Updating
+Download the new version from your account and install it over the old one. Your documents, FAQ answers and settings are kept.

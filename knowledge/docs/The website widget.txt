@@ -1,0 +1,20 @@
+The website widget
+
+Adding it to your site
+The widget is added with one script tag pasted into your website's pages, just before the closing body tag. There is also a WordPress plugin. The widget only answers on the websites you list as allowed in the admin console.
+
+What visitors see
+A launcher button sits in the corner of the page. When a visitor opens it, they are greeted and asked which product their question is about. They can then pick from suggested questions, which are your approved FAQ answers, or type their own. Answers show their sources with the manual name and page number. When the assistant cannot answer, the visitor is offered a way to reach your support team, such as email.
+
+Branding
+You can set the widget's colour, greeting text and launcher position, and choose where refusals send people, for example your support email address. On Professional and Enterprise you can remove "Powered by GroundedOps".
+
+Visitors and allowances
+The widget recognises three kinds of visitor:
+- Anonymous visitors, who have not signed in to your website.
+- Signed-in members, recognised through a signed token your website issues.
+- Your own staff.
+Each has its own daily allowance, set in the admin console. Allowances are counted in credits: a standard answer costs 1 credit and a deep answer, which uses a stronger model and a wider search, costs 4 credits. Approved FAQ answers are free. Deep answers can be limited to signed-in members and staff.
+
+Documents in answers
+Each citation opens the original document at the cited page, so visitors can check any answer themselves.

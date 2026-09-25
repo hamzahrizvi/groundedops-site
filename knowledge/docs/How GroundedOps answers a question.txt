@@ -1,0 +1,36 @@
+How GroundedOps answers a question
+
+This document explains, step by step, what happens between a visitor asking a question and an answer appearing in the widget.
+
+1. The visitor picks a product
+The widget asks the visitor which product or product range their question is about before they can type. This scopes every search to that product's documents, so an answer about one model is never taken from another model's manual. Documents that apply to a whole range, such as a shared protocol manual, can be marked as shared so they are searched for every product in that range.
+
+2. The question is made to stand alone
+Follow-up questions such as "and how do I reset it?" are rewritten using the earlier conversation so that they make sense on their own before searching.
+
+3. The approved FAQ is checked first
+If the question matches an answer your team has approved, that answer is served straight away, word for word. No AI model is called, so approved answers are instant and cost nothing. When a question is only similar to an approved one, the widget can offer the approved question for the visitor to confirm rather than deciding on their behalf.
+
+4. The manuals are searched
+GroundedOps searches the product's documents two ways at once, by keywords and by meaning, merges the results, and reranks them so the most relevant passages come first.
+
+5. The confidence gate: the first place it stops
+Before writing anything, GroundedOps judges how well the search went:
+- If nothing relevant was found, it refuses straight away and never writes an answer.
+- If two different answers fit, for example a restart and a factory reset, it asks the visitor which they mean.
+- If the match is strong, it continues.
+
+6. Writing the answer
+For procedures and checklists, the steps are taken from the manual in order rather than rewritten. For other questions, the AI model writes an answer using only the passages that were found.
+
+7. The grounding check: the second place it stops
+Every generated answer is checked against the passages it came from. If the answer says something those pages do not support, the answer is discarded and the visitor is told honestly that the documents do not confirm it, with a route to a person.
+
+8. The answer is shown with its sources
+The answer appears with the manual name and page number for each source. One click opens the original document at that page.
+
+9. Anything it could not answer is logged
+Refused questions go into the gaps report, grouped and counted, so your team can see which questions come up most and add the missing information to the documentation or write an approved FAQ answer.
+
+What this means in practice
+GroundedOps would rather say "I don't know, here is who can help" than give a confident wrong answer. For technical products, a wrong voltage or a wrong procedure can damage equipment or cost a customer money, so this trade-off is deliberate.

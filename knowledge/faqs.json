@@ -1,0 +1,517 @@
+[
+ {
+  "topic": "Product",
+  "q": "What is GroundedOps?",
+  "a": "GroundedOps is a support assistant that answers questions from your own product manuals. You install it on your own machine, load your documents, and put a chat widget on your website. Every answer cites the manual and page it came from, and when the documents don't back an answer up, it says it doesn't know and offers a person instead of guessing."
+ },
+ {
+  "topic": "Product",
+  "q": "Who is GroundedOps for?",
+  "a": "Companies whose products come with long technical manuals: spec tables, part numbers, fault codes and procedures. It suits support teams answering the same \"it's in the manual\" questions every day, documentation teams who want to see where their manuals are weak, and IT teams who need documents to stay on their own hardware."
+ },
+ {
+  "topic": "Product",
+  "q": "How is GroundedOps different from other chatbots?",
+  "a": "Most chatbots always produce an answer, even when they don't know. GroundedOps checks every answer against the pages it came from before showing it. If the documents don't support it, the answer is never shown: the visitor is told honestly and offered a route to a person. It also asks a clarifying question when a question could mean two things."
+ },
+ {
+  "topic": "Product",
+  "q": "What does \"grounded\" mean?",
+  "a": "It means every answer is tied to a specific passage in your documents. GroundedOps shows the manual and page for each answer, and discards any answer that says something those pages don't support."
+ },
+ {
+  "topic": "Product",
+  "q": "What happens when it doesn't know the answer?",
+  "a": "It says so. If nothing relevant is found in your documents, it refuses before writing anything and offers the visitor a way to reach your support team, such as email. The question is logged in the gaps report so your team can fill the gap."
+ },
+ {
+  "topic": "Product",
+  "q": "Does it ask clarifying questions?",
+  "a": "Yes. If a question matches two different answers, for example a restart and a factory reset, it asks the visitor which they mean instead of picking one."
+ },
+ {
+  "topic": "Product",
+  "q": "Does it show where answers come from?",
+  "a": "Yes. Every answer shows the manual name and page number for each source, and one click opens the original document at that page."
+ },
+ {
+  "topic": "Product",
+  "q": "Can it answer questions across several products?",
+  "a": "Yes. Questions such as \"which of your products run on 24 V?\" are answered from your catalogue and the spec tables in your manuals. Those answers list values straight from the tables, so nothing is made up."
+ },
+ {
+  "topic": "Product",
+  "q": "How does it handle step-by-step procedures?",
+  "a": "Procedures are shown as numbered steps taken from the manual in order, not rewritten by the AI, with the pages they came from."
+ },
+ {
+  "topic": "Product",
+  "q": "What is the curated FAQ?",
+  "a": "GroundedOps suggests question-and-answer pairs from your documents. Your team reviews and approves them. Approved answers are then served instantly and word for word, with no AI call, and appear as suggested questions in the widget."
+ },
+ {
+  "topic": "Product",
+  "q": "What is the gaps report?",
+  "a": "A list of every question the assistant couldn't answer, grouped and counted. It shows your team which missing information comes up most, so they can add it to the documentation or write an approved FAQ answer."
+ },
+ {
+  "topic": "Product",
+  "q": "Can it remember the conversation?",
+  "a": "Yes. Follow-up questions like \"and how do I reset it?\" are understood using the earlier conversation before searching."
+ },
+ {
+  "topic": "Product",
+  "q": "Why does the widget ask me to pick a product first?",
+  "a": "So every search runs against the right manual. That way an answer about one model is never taken from another model's documentation."
+ },
+ {
+  "topic": "Product",
+  "q": "Is the chat on this website GroundedOps?",
+  "a": "Yes. This assistant runs on GroundedOps itself, answering only from GroundedOps's own documentation and approved FAQ answers."
+ },
+ {
+  "topic": "Product",
+  "q": "Can I try the demo on the home page?",
+  "a": "Yes. The sample widget on the home page lets you click six questions to see the different outcomes: a cited answer, an approved FAQ answer, a clarifying question, step-by-step instructions, an honest refusal, and a draft blocked by the grounding check."
+ },
+ {
+  "topic": "Pricing",
+  "q": "How much does GroundedOps cost?",
+  "a": "The proposed prices are Starter at $199 a month, Professional at $599 a month, and Enterprise from $18,000 a year. Paying annually gives you 2 months free. Every plan starts with a 14-day free trial. This site is a staging preview, so prices may change before launch."
+ },
+ {
+  "topic": "Pricing",
+  "q": "Is there a free trial?",
+  "a": "Yes. Every plan starts with a 14-day free trial with no card needed. You get a trial licence key by email and can download the installer straight away. The trial includes Professional features."
+ },
+ {
+  "topic": "Pricing",
+  "q": "Do I need a credit card for the trial?",
+  "a": "No. The 14-day trial needs no card."
+ },
+ {
+  "topic": "Pricing",
+  "q": "What happens when the trial ends?",
+  "a": "The widget pauses until you choose a plan. Nothing is charged automatically."
+ },
+ {
+  "topic": "Pricing",
+  "q": "What is included in the Starter plan?",
+  "a": "Starter ($199 a month) includes 1 installation, 1 website with the widget, up to 15 products in your catalogue, 2 admin seats, all updates while you subscribe, and email support."
+ },
+ {
+  "topic": "Pricing",
+  "q": "What is included in the Professional plan?",
+  "a": "Professional ($599 a month) includes 2 installations such as production and staging, 3 websites, unlimited products, 10 admin seats, sign-in with Microsoft or Google, the option to remove \"Powered by GroundedOps\", all updates, and priority support."
+ },
+ {
+  "topic": "Pricing",
+  "q": "What is included in the Enterprise plan?",
+  "a": "Enterprise (from $18,000 a year) includes unlimited installations and websites, offline local models set up with you, unlimited seats with SSO, a named support contact with agreed response times, and custom licence terms. It is quoted after a conversation about your deployment."
+ },
+ {
+  "topic": "Pricing",
+  "q": "Is AI usage included in the price?",
+  "a": "No. You pay GroundedOps for the software, updates and support. If you use your own DeepSeek, OpenAI or Claude key, that provider bills you directly for the answers it writes. With offline local models there is no AI bill at all."
+ },
+ {
+  "topic": "Pricing",
+  "q": "Why don't you charge per question?",
+  "a": "Because answers are written by your own AI provider account, not ours. The licence is a fixed price that doesn't change with how many questions your visitors ask."
+ },
+ {
+  "topic": "Pricing",
+  "q": "Do approved FAQ answers cost anything?",
+  "a": "No. Approved FAQ answers and refusals make no AI call, so they cost nothing to serve."
+ },
+ {
+  "topic": "Pricing",
+  "q": "Is there a discount for paying annually?",
+  "a": "Yes. Annual billing costs the same as 10 months, so you get 2 months free: Starter is $1,990 a year and Professional is $5,990 a year."
+ },
+ {
+  "topic": "Pricing",
+  "q": "What add-ons are available?",
+  "a": "Setup and onboarding ($1,500 to $5,000 one-off), managed hosting ($149 a month), and extra support hours ($120 an hour)."
+ },
+ {
+  "topic": "Pricing",
+  "q": "What is the setup and onboarding add-on?",
+  "a": "A one-off service, $1,500 to $5,000 depending on your documents, where we load your manuals, build your catalogue and approve your first FAQ answers with you. It is quoted after a short call."
+ },
+ {
+  "topic": "Pricing",
+  "q": "What is managed hosting?",
+  "a": "For $149 a month we run your GroundedOps installation on our server with a public address, so your website's widget is always reachable without you running a server."
+ },
+ {
+  "topic": "Pricing",
+  "q": "Can I pay by invoice?",
+  "a": "Yes, on annual Professional and Enterprise plans."
+ },
+ {
+  "topic": "Pricing",
+  "q": "Which plan should I choose?",
+  "a": "Starter suits one product line on one website. Professional suits a full catalogue, several websites, SSO, or a separate staging copy to test changes. Enterprise is for fully offline deployments or many sites. The 14-day trial includes Professional features, so you can decide after trying it."
+ },
+ {
+  "topic": "Pricing",
+  "q": "Is there a free plan?",
+  "a": "There is no permanent free plan. Every plan starts with a 14-day free trial."
+ },
+ {
+  "topic": "Licensing",
+  "q": "How does the licence work?",
+  "a": "You receive a licence key by email when you start a trial or subscribe. You paste it into GroundedOps during setup, and that machine becomes one of your installations. Your plan sets how many installations you can have."
+ },
+ {
+  "topic": "Licensing",
+  "q": "How many installations can I have?",
+  "a": "Starter allows 1 installation, Professional allows 2 (for example production and staging), and Enterprise is unlimited."
+ },
+ {
+  "topic": "Licensing",
+  "q": "Can I move GroundedOps to a new server?",
+  "a": "Yes. Release the old installation from your account page, then activate the new machine with the same key."
+ },
+ {
+  "topic": "Licensing",
+  "q": "What if my licence key is shared by mistake?",
+  "a": "Issue a new key from your account page. The old key stops working 7 days later, giving you time to update your installations."
+ },
+ {
+  "topic": "Licensing",
+  "q": "Does GroundedOps need an internet connection?",
+  "a": "It checks its licence from time to time, and sites without internet can activate with a licence file instead. If you use a cloud AI provider, the machine also needs internet access to reach that provider. With offline local models it can run without internet."
+ },
+ {
+  "topic": "Licensing",
+  "q": "Are updates included?",
+  "a": "Yes. Every update is included while your licence is active. New versions appear on the Downloads page of your account with release notes."
+ },
+ {
+  "topic": "Licensing",
+  "q": "What happens if a payment fails?",
+  "a": "Your installations keep working for 14 days while you update your card, and the account owner is emailed before anything pauses. After 14 days the widget pauses until the licence is renewed."
+ },
+ {
+  "topic": "Licensing",
+  "q": "How do I cancel?",
+  "a": "Cancel from the Billing page at any time. Everything keeps working until the end of the period you've paid for, and you won't be charged again."
+ },
+ {
+  "topic": "Licensing",
+  "q": "What happens to my data if I cancel?",
+  "a": "Your documents, FAQ answers and logs stay on your own machines. GroundedOps never held them, so there is nothing to hand back or delete. After the licence expires, updates and support stop, and 14 days later the widget pauses."
+ },
+ {
+  "topic": "Licensing",
+  "q": "Can I change my plan later?",
+  "a": "Yes, from the Billing page. If you move to a smaller plan while over its limits, you are shown exactly what changes and choose what to keep before confirming. Nothing is deleted."
+ },
+ {
+  "topic": "Licensing",
+  "q": "Do you offer refunds?",
+  "a": "For refund questions, please contact the team at hello@groundedops.example."
+ },
+ {
+  "topic": "Licensing",
+  "q": "Can I get custom licence terms?",
+  "a": "Custom licence terms are part of the Enterprise plan. Contact the team at hello@groundedops.example to discuss them."
+ },
+ {
+  "topic": "Installation",
+  "q": "How do I install GroundedOps?",
+  "a": "Use the Windows installer on Windows 10 or 11 (64-bit), or Docker on a Linux server or cloud machine. The installer opens the setup page in your browser when it finishes."
+ },
+ {
+  "topic": "Installation",
+  "q": "What does it run on?",
+  "a": "Windows 10 or 11, 64-bit, with the installer, or any server that runs Docker."
+ },
+ {
+  "topic": "Installation",
+  "q": "Does it run on Mac?",
+  "a": "The downloads are a Windows installer and a Docker image. Running it on other systems would be through Docker; contact the team if you need help with a specific setup."
+ },
+ {
+  "topic": "Installation",
+  "q": "What are the system requirements?",
+  "a": "GroundedOps runs its own search, ranking and answer-checking models locally, so it needs a reasonably capable machine. Exact memory and disk needs depend on how many documents you load, so contact the team to size it for your library. Offline local models need considerably more power, and a GPU is recommended."
+ },
+ {
+  "topic": "Installation",
+  "q": "How long does setup take?",
+  "a": "First-time setup is three steps: activate your licence, connect a model, and upload your first manual. Most of the work is deciding which manuals to start with."
+ },
+ {
+  "topic": "Installation",
+  "q": "What happens during first-time setup?",
+  "a": "You paste your licence key, choose your AI model (your own DeepSeek, OpenAI or Claude key, or offline models through Ollama), and upload your first manual. Then you can try it in the test chat, name your products, approve FAQ answers and add the widget to your site."
+ },
+ {
+  "topic": "Installation",
+  "q": "Can I run it on an office PC?",
+  "a": "Yes, for internal use by your staff. For a public website widget, the machine must be always on and reachable from the internet, or behind a secure tunnel. A PC that is switched off at night or sits behind a normal office router won't work on its own for a public site."
+ },
+ {
+  "topic": "Installation",
+  "q": "How do I put the widget on a public website?",
+  "a": "Your GroundedOps installation must be reachable from visitors' browsers: either an always-on machine with a public address, or a secure tunnel. The install guide covers both. Or choose the managed hosting add-on and we run it for you."
+ },
+ {
+  "topic": "Installation",
+  "q": "How do I update to a new version?",
+  "a": "Download the new version from your account and install it over the old one. Your documents, FAQ answers and settings are kept."
+ },
+ {
+  "topic": "Installation",
+  "q": "Can you install it for me?",
+  "a": "Yes. The setup and onboarding add-on covers loading your manuals and building your catalogue with you, and managed hosting means we run the installation for you."
+ },
+ {
+  "topic": "AI and privacy",
+  "q": "Which AI models does GroundedOps support?",
+  "a": "Your own DeepSeek, OpenAI or Claude (Anthropic) API key, or offline local models running on your own hardware through Ollama. You can switch at any time."
+ },
+ {
+  "topic": "AI and privacy",
+  "q": "Can it run fully offline?",
+  "a": "Yes, with local models through Ollama on your own hardware. Nothing leaves the building. Offline answers are slower and simpler than the big cloud models, and offline models are part of the Enterprise plan."
+ },
+ {
+  "topic": "AI and privacy",
+  "q": "Where are my documents stored?",
+  "a": "On the machine where you install GroundedOps. They are not uploaded to GroundedOps the company."
+ },
+ {
+  "topic": "AI and privacy",
+  "q": "Is my data sent to the AI provider?",
+  "a": "With a cloud key, each question and the matching passages from your manuals are sent to that provider so it can write the answer. The full documents are not sent. With offline models, nothing is sent anywhere, and approved FAQ answers never call an AI model."
+ },
+ {
+  "topic": "AI and privacy",
+  "q": "Do you use my documents to train AI models?",
+  "a": "GroundedOps doesn't receive your documents at all: they stay on your machine. With a cloud key, passages are sent to the provider you chose to write each answer, under that provider's own terms, which you should check. With offline models nothing leaves your machine."
+ },
+ {
+  "topic": "AI and privacy",
+  "q": "Do I need my own AI key?",
+  "a": "You need either your own DeepSeek, OpenAI or Claude key, or offline local models on the Enterprise plan."
+ },
+ {
+  "topic": "AI and privacy",
+  "q": "How much will my AI provider charge?",
+  "a": "That depends on your provider, model and how many generated answers your visitors ask for. Approved FAQ answers and refusals make no AI call, and daily caps per visitor keep usage bounded. Check your provider's current pricing for exact figures."
+ },
+ {
+  "topic": "AI and privacy",
+  "q": "How do I keep AI costs under control?",
+  "a": "Set daily allowances per visitor type, limit questions per conversation, approve answers to common questions so they're served free, and turn on the email alert that warns you before your provider credit runs out."
+ },
+ {
+  "topic": "AI and privacy",
+  "q": "Is GroundedOps secure?",
+  "a": "It is self-hosted, so your documents stay inside your own security controls. Only the website widget needs to face the internet; the admin console stays on your network. It supports role-based accounts, sign-in with Microsoft or Google work accounts, and passwords stored as salted hashes."
+ },
+ {
+  "topic": "AI and privacy",
+  "q": "What is exposed to the internet?",
+  "a": "Only the website widget. The admin console, where documents are uploaded and settings changed, is meant to stay on your own network."
+ },
+ {
+  "topic": "AI and privacy",
+  "q": "Does it support single sign-on?",
+  "a": "Yes. Sign-in with Microsoft (Entra ID) or Google Workspace work accounts is supported on Professional and Enterprise. An Owner has to create or approve each account first."
+ },
+ {
+  "topic": "AI and privacy",
+  "q": "What user roles are there?",
+  "a": "Owner can do everything, including managing accounts. Admin does day-to-day work on documents and FAQ answers. Viewer can use the test chat only."
+ },
+ {
+  "topic": "AI and privacy",
+  "q": "Is GroundedOps SOC 2 or ISO 27001 certified?",
+  "a": "No, GroundedOps doesn't currently hold those certifications. Because it is self-hosted, your documents stay within your own security controls."
+ },
+ {
+  "topic": "AI and privacy",
+  "q": "Is GroundedOps GDPR compliant?",
+  "a": "Your documents stay on your own machine, and with offline models nothing is sent anywhere. For specific compliance questions or a data processing agreement, contact the team at hello@groundedops.example."
+ },
+ {
+  "topic": "Widget",
+  "q": "How do I add the widget to my website?",
+  "a": "Paste one script tag into your website's pages, just before the closing body tag. There is also a WordPress plugin. The widget only answers on the websites you list as allowed."
+ },
+ {
+  "topic": "Widget",
+  "q": "Does it work with WordPress?",
+  "a": "Yes. There is a WordPress plugin, and a single script tag works on any other website."
+ },
+ {
+  "topic": "Widget",
+  "q": "Can I change how the widget looks?",
+  "a": "Yes. You can set its colour, greeting and launcher position, and choose where refusals send people, such as your support email. Professional and Enterprise can remove \"Powered by GroundedOps\"."
+ },
+ {
+  "topic": "Widget",
+  "q": "Can I limit how much each visitor can ask?",
+  "a": "Yes. Anonymous visitors, signed-in members and your staff each get their own daily allowance, and you can limit questions per conversation."
+ },
+ {
+  "topic": "Widget",
+  "q": "What are credits?",
+  "a": "Visitor allowances are counted in credits. A standard answer costs 1 credit, a deep answer (stronger model, wider search) costs 4, and approved FAQ answers are free. Credits are an allowance you set to control usage, not something you buy from us."
+ },
+ {
+  "topic": "Widget",
+  "q": "What is a deep answer?",
+  "a": "A more thorough answer that uses a stronger model and a wider search. It costs 4 credits instead of 1 and can be limited to signed-in members and staff."
+ },
+ {
+  "topic": "Widget",
+  "q": "Can the widget hand over to a person?",
+  "a": "When the assistant can't answer, it offers the visitor a way to reach your support team, such as email, which you set in the admin console."
+ },
+ {
+  "topic": "Widget",
+  "q": "Can I put the widget on more than one website?",
+  "a": "Yes. Starter allows 1 website, Professional allows 3, and Enterprise is unlimited."
+ },
+ {
+  "topic": "Documents",
+  "q": "What file types can I upload?",
+  "a": "PDF, Word (DOCX) and plain text (TXT). Pages are kept so citations point to the exact page."
+ },
+ {
+  "topic": "Documents",
+  "q": "Can it read scanned PDFs?",
+  "a": "Scanned pages that are only images, with no text in them, can't be read. Upload a text version of those documents instead."
+ },
+ {
+  "topic": "Documents",
+  "q": "How many documents can I upload?",
+  "a": "There's no fixed document limit on any plan; Starter limits the number of products in your catalogue to 15. How many documents a machine handles comfortably depends on its memory, so contact the team to size it for a large library."
+ },
+ {
+  "topic": "Documents",
+  "q": "How do I organise my documents?",
+  "a": "Use the catalogue: categories such as a product range, with products inside them. Attach each document to a product, and put documents that apply to a whole range in the category's shared section."
+ },
+ {
+  "topic": "Documents",
+  "q": "Can I edit the answers it gives?",
+  "a": "You can write or edit approved FAQ answers, which are served word for word. Generated answers always come from your documents, so to change them you update the document."
+ },
+ {
+  "topic": "Documents",
+  "q": "Can I back up my data?",
+  "a": "Yes. The admin console can create and restore backups of your documents, FAQ answers, catalogue and settings."
+ },
+ {
+  "topic": "Company",
+  "q": "How do I contact GroundedOps?",
+  "a": "Email hello@groundedops.example to book a demo, ask about Enterprise or setup, or ask anything this assistant can't answer."
+ },
+ {
+  "topic": "Company",
+  "q": "Can I book a demo?",
+  "a": "Yes. Email hello@groundedops.example to arrange one, or start the 14-day free trial to try it on your own manuals straight away."
+ },
+ {
+  "topic": "Company",
+  "q": "Is this website live?",
+  "a": "This is a staging preview of the GroundedOps website. Prices are proposed and may change, and the checkout doesn't take payment or send licence keys yet."
+ },
+ {
+  "topic": "Company",
+  "q": "Can I use GroundedOps for things other than product manuals?",
+  "a": "It's designed for technical documentation such as manuals, guides and spec sheets, but it answers from whatever PDF, DOCX or TXT documents you load. The best way to check your own documents is the free trial."
+ },
+ {
+  "topic": "Pricing",
+  "q": "How much does it cost?",
+  "a": "The proposed prices are Starter at $199 a month, Professional at $599 a month, and Enterprise from $18,000 a year. Paying annually gives you 2 months free. Every plan starts with a 14-day free trial. This site is a staging preview, so prices may change before launch."
+ },
+ {
+  "topic": "Pricing",
+  "q": "What does it cost?",
+  "a": "The proposed prices are Starter at $199 a month, Professional at $599 a month, and Enterprise from $18,000 a year. Paying annually gives you 2 months free. Every plan starts with a 14-day free trial. This site is a staging preview, so prices may change before launch."
+ },
+ {
+  "topic": "Pricing",
+  "q": "Is it free?",
+  "a": "There is no permanent free plan. Every plan starts with a 14-day free trial."
+ },
+ {
+  "topic": "Licensing",
+  "q": "Can I run it without internet?",
+  "a": "It checks its licence from time to time, and sites without internet can activate with a licence file instead. If you use a cloud AI provider, the machine also needs internet access to reach that provider. With offline local models it can run without internet."
+ },
+ {
+  "topic": "AI and privacy",
+  "q": "Does it work offline?",
+  "a": "Yes, with local models through Ollama on your own hardware. Nothing leaves the building. Offline answers are slower and simpler than the big cloud models, and offline models are part of the Enterprise plan."
+ },
+ {
+  "topic": "Documents",
+  "q": "What file formats are supported?",
+  "a": "PDF, Word (DOCX) and plain text (TXT). Pages are kept so citations point to the exact page."
+ },
+ {
+  "topic": "Widget",
+  "q": "Can I put it on WordPress?",
+  "a": "Yes. There is a WordPress plugin, and a single script tag works on any other website."
+ },
+ {
+  "topic": "Documents",
+  "q": "Is there a limit on documents?",
+  "a": "There's no fixed document limit on any plan; Starter limits the number of products in your catalogue to 15. How many documents a machine handles comfortably depends on its memory, so contact the team to size it for a large library."
+ },
+ {
+  "topic": "Documents",
+  "q": "How many documents can it handle?",
+  "a": "There's no fixed document limit on any plan; Starter limits the number of products in your catalogue to 15. How many documents a machine handles comfortably depends on its memory, so contact the team to size it for a large library."
+ },
+ {
+  "topic": "AI and privacy",
+  "q": "Is it secure?",
+  "a": "It is self-hosted, so your documents stay inside your own security controls. Only the website widget needs to face the internet; the admin console stays on your network. It supports role-based accounts, sign-in with Microsoft or Google work accounts, and passwords stored as salted hashes."
+ },
+ {
+  "topic": "AI and privacy",
+  "q": "Where is my data stored?",
+  "a": "On the machine where you install GroundedOps. They are not uploaded to GroundedOps the company."
+ },
+ {
+  "topic": "Installation",
+  "q": "Does it need a GPU?",
+  "a": "Not for normal use with a cloud AI key: GroundedOps runs its search, ranking and answer-checking models on an ordinary capable machine. A GPU is recommended if you want to run offline local models, which need considerably more power."
+ },
+ {
+  "topic": "Company",
+  "q": "How do I get started?",
+  "a": "Start the 14-day free trial from the Get started page. No card is needed: you get a trial licence key by email, download the installer, activate the key, connect an AI model and upload your first manual."
+ },
+ {
+  "topic": "Company",
+  "q": "Who makes GroundedOps?",
+  "a": "GroundedOps is built by the GroundedOps team. For company details or to talk to someone, email hello@groundedops.example."
+ },
+ {
+  "topic": "Pricing",
+  "q": "What is the difference between the plans?",
+  "a": "Starter ($199 a month) is 1 installation, 1 website and up to 15 products with email support. Professional ($599 a month) adds a second installation for staging, 3 websites, unlimited products, SSO and priority support. Enterprise (from $18,000 a year) adds offline local models, unlimited installations and a named contact."
+ },
+ {
+  "topic": "Installation",
+  "q": "Can I host it on AWS, Azure or Google Cloud?",
+  "a": "Yes. Run the Docker image on a Linux server at any cloud provider, such as AWS, Azure or Google Cloud. Or choose the managed hosting add-on and we run it for you."
+ },
+ {
+  "topic": "Pricing",
+  "q": "How many admin users does each plan include?",
+  "a": "Starter includes 2 admin seats, Professional includes 10, and Enterprise is unlimited."
+ }
+]
