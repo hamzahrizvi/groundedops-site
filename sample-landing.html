@@ -1,0 +1,315 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>GroundedOps · sample landing page</title>
+<meta name="description" content="Answers from your own manuals, or none at all.">
+<link rel="icon" href="assets/logo-mark.svg" type="image/svg+xml">
+<script>try{var t=localStorage.getItem('go-theme');if(t==='light'||t==='dark')document.documentElement.setAttribute('data-theme',t)}catch(e){}</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600&family=Newsreader:opsz,wght@6..72,400;6..72,500;6..72,600&display=swap">
+<link rel="stylesheet" href="assets/site.css">
+</head>
+<body>
+<div class="staging" role="note"><b>Staging preview.</b> Prices are suggestions and checkout isn’t connected yet.</div>
+<header class="site-header">
+  <div class="wrap">
+    <a class="brand" href="index.html">
+      <img class="logo-l" src="assets/logo-mark.svg" alt=""><img class="logo-d" src="assets/logo-mark-light.svg" alt="">
+      GroundedOps
+    </a>
+    <nav class="nav" aria-label="Main">
+      <a href="index.html#demo" data-nav="demo" aria-current="page">Demo</a>
+      <a href="index.html#how" data-nav="how">How it works</a>
+      <a href="index.html#self-hosted" data-nav="self">Self-hosting</a>
+      <a href="pricing.html" data-nav="pricing">Pricing</a>
+      <a href="get-started.html" data-nav="start">Get started</a>
+    </nav>
+    <div class="header-actions">
+      <button class="icon-btn" type="button" data-theme-toggle aria-label="Switch colour theme">
+        <svg class="moon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 14.5A8 8 0 1 1 9.5 4a6.5 6.5 0 0 0 10.5 10.5z"/></svg>
+        <svg class="sun" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><path d="M12 8a4 4 0 1 0 0 8 4 4 0 0 0 0-8zM12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg>
+      </button>
+      <a class="btn btn-primary" href="get-started.html">Try free for 14 days</a>
+      <button class="icon-btn menu-btn" type="button" data-menu aria-expanded="false" aria-label="Menu">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+      </button>
+    </div>
+  </div>
+</header>
+<main>
+<style>
+  /* Sample landing: fewer words, motion does the explaining.
+     One scale, used everywhere: headings --h2, lead 20px, labels 16px, notes 14px,
+     every page button .x-btn, every section 96px (64px on phones) top and bottom,
+     every heading 48px above what follows it. */
+  :root { --h2: clamp(34px, 4.4vw, 56px); --gap: 48px; }
+  main .section { padding: 96px 0; }
+  @media (max-width: 900px) { main .section { padding: 64px 0; } :root { --gap: 36px; } }
+  .x-h2 { font-family: var(--serif); font-weight: 500; font-size: var(--h2); line-height: 1.08; letter-spacing: -0.02em; margin: 0; }
+  .x-btn { min-height: 52px; min-width: 176px; padding: 0 28px; font: 600 16px var(--sans); }
+  .x-btn-ghost { border: 1px solid var(--oninverse); color: var(--oninverse); background: transparent; }
+  .x-btn-ghost:hover { color: var(--oninverse); background: rgba(255,255,255,.08); }
+  .x-hero { min-height: calc(100vh - 110px); display: grid; grid-template-columns: minmax(0, 1fr) 460px; gap: 64px; align-items: center; padding: 40px 0 64px; }
+  @media (max-width: 960px) { .x-hero { grid-template-columns: 1fr; gap: 36px; min-height: 0; } }
+  .x-hero h1 { font-size: clamp(46px, 6.4vw, 88px); line-height: 0.98; letter-spacing: -0.03em; }
+  .x-hero h1 .soft { color: var(--muted); display: block; }
+  .x-sub { font-size: 20px; line-height: 1.5; color: var(--ink2); margin: 24px 0 32px; }
+  .x-cta { display: flex; gap: 16px; flex-wrap: wrap; align-items: center; }
+  .x-note { font-size: 14px; line-height: 1.5; color: var(--muted); margin: 0; }
+
+  /* The self-playing widget */
+  .x-widget { position: relative; height: 520px; display: flex; flex-direction: column; background: var(--surface); border-radius: 20px; box-shadow: 0 30px 80px var(--shadow), 0 0 0 1px var(--line); overflow: hidden; }
+  .x-head { height: 56px; flex-shrink: 0; display: flex; align-items: center; gap: 10px; padding: 0 18px; background: var(--inverse); color: var(--oninverse); font-weight: 600; font-size: 15px; }
+  .x-dot { width: 30px; height: 30px; border-radius: 50%; background: var(--accent); color: var(--onaccent); display: grid; place-items: center; font-size: 13px; }
+  .x-thread { flex: 1; padding: 18px; display: flex; flex-direction: column; justify-content: flex-end; gap: 12px; font-size: 16px; line-height: 1.45; overflow: hidden; }
+  .x-msg { max-width: 85%; padding: 12px 16px; border-radius: 16px 16px 16px 4px; background: var(--bubblebot); align-self: flex-start; animation: pop .35s cubic-bezier(.2,.9,.3,1.3) both; }
+  .x-msg.user { align-self: flex-end; background: var(--bubbleuser); color: var(--onbubbleuser); border-radius: 16px 16px 4px 16px; }
+  .x-chip { display: inline-flex; gap: 6px; margin-top: 10px; padding: 5px 10px; background: var(--surface); border: 1px solid var(--line); border-radius: 6px; font-family: var(--mono); font-size: 12px; animation: pop .35s .25s both; }
+  .x-chip.ok::before { content: "✓"; color: var(--ok); }
+  .x-choices { align-self: flex-end; display: flex; gap: 8px; animation: pop .35s .2s both; }
+  .x-choices span { padding: 9px 14px; border: 1.5px solid var(--accent); color: var(--accenttext); border-radius: 20px; font-size: 14px; font-weight: 600; }
+  .x-choices span.solid { background: var(--inverse); color: var(--oninverse); border-color: var(--inverse); }
+  .x-typing { display: flex; gap: 5px; padding: 14px 16px; }
+  .x-typing i { width: 7px; height: 7px; border-radius: 50%; background: var(--muted); animation: blink 1s infinite; }
+  .x-typing i:nth-child(2) { animation-delay: .15s; } .x-typing i:nth-child(3) { animation-delay: .3s; }
+  .x-caret { display: inline-block; width: 2px; height: 1em; background: currentColor; vertical-align: -2px; margin-left: 1px; animation: blink .8s steps(1) infinite; }
+
+  /* Pages being searched, shown above the typing dots */
+  .x-pages { display: flex; gap: 8px; align-self: flex-start; }
+  .x-page { width: 38px; height: 50px; border-radius: 4px; background: var(--sunk); border: 1px solid var(--line); position: relative; animation: flip .5s both; }
+  .x-page::after { content: ""; position: absolute; inset: 9px 7px auto; height: 18px; background: repeating-linear-gradient(var(--line2) 0 2px, transparent 2px 6px); }
+  .x-page:nth-child(2) { animation-delay: .1s; } .x-page:nth-child(3) { animation-delay: .2s; } .x-page:nth-child(4) { animation-delay: .3s; }
+  .x-page.hit { border: 2px solid var(--ok); background: var(--okbg); }
+  .x-page.hit b { position: absolute; bottom: -18px; left: 0; right: 0; text-align: center; font: 600 11px var(--mono); color: var(--ok); }
+  .x-page.miss { opacity: .35; }
+
+  .x-status { position: absolute; top: 70px; right: 14px; display: flex; align-items: center; gap: 7px; padding: 6px 12px; border-radius: 20px; font-size: 13px; font-weight: 600; background: var(--sunk); transition: background .3s, color .3s; }
+  .x-status::before { content: ""; width: 8px; height: 8px; border-radius: 50%; background: currentColor; }
+  .x-status.ok { background: var(--okbg); color: var(--ok); }
+  .x-status.bad { background: var(--badbg); color: var(--bad); }
+  .x-status.info { background: var(--infobg); color: var(--info); }
+
+  @keyframes pop { from { opacity: 0; transform: translateY(10px) scale(.96); } to { opacity: 1; transform: none; } }
+  @keyframes flip { from { opacity: 0; transform: rotateY(90deg); } to { opacity: 1; transform: none; } }
+  @keyframes blink { 50% { opacity: .25; } }
+
+  /* Section: the pipeline, a dot travels through two gates */
+  .x-center { text-align: center; }
+  .x-pipe { position: relative; margin: var(--gap) auto 0; max-width: 980px; height: 150px; }
+  .x-line { position: absolute; left: 6%; right: 6%; top: 44px; height: 2px; background: var(--line2); }
+  .x-runner { position: absolute; top: 37px; left: 6%; width: 16px; height: 16px; border-radius: 50%; background: var(--accent); box-shadow: 0 0 0 6px var(--accenttint); animation: run 5s cubic-bezier(.6,0,.4,1) infinite; }
+  @keyframes run { 0% { left: 6%; opacity: 0; } 8% { opacity: 1; } 92% { opacity: 1; } 100% { left: calc(94% - 16px); opacity: 0; } }
+  .x-nodes { position: absolute; inset: 0; display: flex; justify-content: space-between; padding: 0 3%; }
+  .x-node { width: 120px; display: flex; flex-direction: column; align-items: center; gap: 14px; }
+  .x-node .ic { width: 88px; height: 88px; border-radius: 22px; display: grid; place-items: center; background: var(--surface); border: 1px solid var(--line); position: relative; z-index: 1; }
+  .x-node b { font-size: 16px; font-weight: 600; line-height: 1.3; }
+  .x-node.gate .ic { border: 2px solid var(--accent); animation: gate 5s infinite; }
+  .x-node.gate:nth-child(2) .ic { animation-delay: 1.4s; }
+  .x-node.gate:nth-child(3) .ic { animation-delay: 2.8s; }
+  @keyframes gate { 0%, 100% { box-shadow: none; } 6% { box-shadow: 0 0 0 10px var(--accenttint); } 14% { box-shadow: none; } }
+  @media (max-width: 700px) { .x-node { width: 76px; } .x-node .ic { width: 60px; height: 60px; border-radius: 16px; } .x-node .ic svg { width: 26px; height: 26px; } .x-node b { font-size: 14px; } }
+  .x-pipe + .x-note { margin-top: 8px; }
+
+  /* Section: the grounding check strikes an unsupported claim */
+  .x-check { max-width: 760px; margin: var(--gap) auto 0; padding: 34px; background: var(--surface); border: 1px solid var(--line); border-radius: 18px; position: relative; overflow: hidden; font-family: var(--serif); font-size: clamp(24px, 3vw, 34px); line-height: 1.35; text-align: left; }
+  .x-scan { position: absolute; top: 0; bottom: 0; width: 80px; left: -80px; background: linear-gradient(90deg, transparent, var(--accenttint), transparent); }
+  .x-check.play .x-scan { animation: scan 1.6s ease-in-out forwards; }
+  @keyframes scan { to { left: 100%; } }
+  .x-claim { border-radius: 6px; padding: 0 4px; transition: background .4s, color .4s, opacity .6s, max-width .8s; }
+  .x-check.done .good { background: var(--okbg); color: var(--ok); }
+  .x-check.done .bad { background: var(--badbg); color: var(--bad); text-decoration: line-through; }
+  .x-check.gone .bad { opacity: 0; }
+  .x-tags { display: flex; gap: 10px; margin-top: 22px; font: 600 13px var(--sans); opacity: 0; transition: opacity .4s .3s; flex-wrap: wrap; }
+  .x-check.done .x-tags { opacity: 1; }
+  .x-tags span { padding: 5px 10px; border-radius: 12px; }
+
+  /* Section: three short statements that reveal on scroll */
+  .x-lines { display: flex; flex-direction: column; align-items: center; gap: 16px; text-align: center; }
+  .x-lines .x-h2 span { color: var(--accenttext); }
+
+  /* Scroll reveal */
+  .rv { opacity: 0; transform: translateY(28px); transition: opacity .7s ease, transform .7s cubic-bezier(.2,.8,.2,1); }
+  .rv.in { opacity: 1; transform: none; }
+  .rv.d1 { transition-delay: .12s; } .rv.d2 { transition-delay: .24s; } .rv.d3 { transition-delay: .36s; }
+
+  .x-final { text-align: center; }
+  .x-final .x-cta { justify-content: center; margin-top: var(--gap); }
+  .x-final .x-note { color: var(--oninverse2); margin-top: 16px; }
+
+  @media (prefers-reduced-motion: reduce) {
+    .rv { opacity: 1; transform: none; transition: none; }
+    .x-runner, .x-node.gate .ic, .x-typing i, .x-caret { animation: none; }
+    .x-msg, .x-chip, .x-choices, .x-page { animation: none; }
+  }
+</style>
+
+<section class="wrap x-hero">
+  <div>
+    <h1 class="rv in">Answers from your manuals.<span class="soft">Or none at all.</span></h1>
+    <p class="x-sub rv in d1">Every answer cited. Every guess refused.</p>
+    <div class="x-cta rv in d2">
+      <a class="btn btn-primary x-btn" href="get-started.html">Try free for 14 days</a>
+      <p class="x-note">No card needed</p>
+    </div>
+  </div>
+  <div class="x-widget rv in d2" aria-label="Animated example conversation" role="img">
+    <div class="x-head"><span class="x-dot">A</span>Acme support</div>
+    <span class="x-status" id="x-status">Listening</span>
+    <div class="x-thread" id="x-thread"></div>
+  </div>
+</section>
+
+<section class="section alt x-center">
+  <div class="wrap">
+    <h2 class="x-h2 rv">Two checks before anyone sees an answer.</h2>
+    <div class="x-pipe rv d1" aria-hidden="true">
+      <div class="x-line"></div>
+      <div class="x-runner"></div>
+      <div class="x-nodes">
+        <div class="x-node"><span class="ic"><svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 4h10a4 4 0 0 1 4 4v12H9a4 4 0 0 1-4-4zM5 16a4 4 0 0 1 4-4h10"/></svg></span><b>Your manuals</b></div>
+        <div class="x-node gate"><span class="ic"><svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="M20 20l-4-4"/></svg></span><b>Found it?</b></div>
+        <div class="x-node gate"><span class="ic"><svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l8 3v6c0 4.5-3.4 8-8 9-4.6-1-8-4.5-8-9V6z"/><path d="M8.5 12l2.5 2.5 4.5-5"/></svg></span><b>Proved it?</b></div>
+        <div class="x-node"><span class="ic"><svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M4 5h16v11h-6l-4 4v-4H4z"/></svg></span><b>Answer + page</b></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section x-center">
+  <div class="wrap">
+    <h2 class="x-h2 rv">Can’t prove it? It’s gone.</h2>
+    <div class="x-check rv d1" id="x-check" aria-label="A draft answer: the supported claim is kept, the unsupported claim is removed">
+      <span class="x-scan"></span>
+      <span class="x-claim good">It runs on 12 V DC.</span>
+      <span class="x-claim bad">It’s fully waterproof.</span>
+      <div class="x-tags"><span style="background: var(--okbg); color: var(--ok);">✓ Installation guide · p. 14</span><span style="background: var(--badbg); color: var(--bad);">✕ Not in any manual</span></div>
+    </div>
+  </div>
+</section>
+
+<section class="section alt">
+  <div class="wrap x-lines">
+    <p class="x-h2 rv">Cited to the <span>page.</span></p>
+    <p class="x-h2 rv d1">Runs on <span>your machine.</span></p>
+    <p class="x-h2 rv d2">Uses <span>your AI key.</span></p>
+  </div>
+</section>
+
+<section class="section inverse x-final">
+  <div class="wrap">
+    <h2 class="x-h2 rv">Try it on your own manual.</h2>
+    <div class="x-cta rv d1"><a class="btn btn-primary x-btn" href="get-started.html">Start free</a><a class="btn x-btn x-btn-ghost" href="pricing.html">See pricing</a></div>
+    <p class="x-note rv d2">From $199 a month · 14 days free</p>
+  </div>
+</section>
+
+<script>
+(function () {
+  var reduce = window.matchMedia && matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  // Scroll reveal
+  var io = 'IntersectionObserver' in window ? new IntersectionObserver(function (es) {
+    es.forEach(function (e) { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } });
+  }, { threshold: 0.2 }) : null;
+  document.querySelectorAll('.rv').forEach(function (el) { io ? io.observe(el) : el.classList.add('in'); });
+
+  // Grounding check plays once when it scrolls into view
+  var chk = document.getElementById('x-check');
+  var play = function () {
+    if (reduce) { chk.classList.add('done', 'gone'); return; }
+    chk.classList.add('play');
+    setTimeout(function () { chk.classList.add('done'); }, 1500);
+    setTimeout(function () { chk.classList.add('gone'); }, 3300);
+  };
+  if ('IntersectionObserver' in window) {
+    new IntersectionObserver(function (es, o) { if (es[0].isIntersecting) { o.disconnect(); setTimeout(play, 500); } }, { threshold: 0.6 }).observe(chk);
+  } else { play(); }
+
+  // The self-playing widget: three short scenes on a loop
+  var thread = document.getElementById('x-thread');
+  var status = document.getElementById('x-status');
+  var SCENES = [
+    { q: 'What voltage does it need?', pages: 'hit', a: '12 V DC, 2 A minimum.', chip: 'Installation guide · p. 14', tag: ['ok', 'Cited'] },
+    { q: 'Can I use it outdoors?', pages: 'miss', a: 'That’s not in the manual. Want a person?', choices: [['solid', 'Email support']], tag: ['bad', 'Refused, honestly'] },
+    { q: 'How do I reset it?', pages: 'two', a: 'Restart, or factory reset?', choices: [['', 'Restart'], ['', 'Factory reset']], tag: ['info', 'Asked first'] }
+  ];
+  function el(tag, cls, html) { var n = document.createElement(tag); if (cls) n.className = cls; if (html != null) n.innerHTML = html; return n; }
+  function setStatus(cls, text) { status.className = 'x-status ' + (cls || ''); status.textContent = text; }
+  function wait(ms) { return new Promise(function (r) { setTimeout(r, reduce ? 0 : ms); }); }
+
+  async function typeInto(node, text) {
+    var caret = el('span', 'x-caret');
+    node.appendChild(caret);
+    for (var i = 0; i < text.length; i++) {
+      caret.insertAdjacentText('beforebegin', text[i]);
+      await wait(38);
+    }
+    caret.remove();
+  }
+
+  async function scene(s) {
+    thread.innerHTML = '';
+    setStatus('', 'Listening');
+    var user = el('div', 'x-msg user');
+    thread.appendChild(user);
+    await typeInto(user, s.q);
+    await wait(300);
+    setStatus('', 'Searching the manuals');
+    var pages = el('div', 'x-pages');
+    for (var i = 0; i < 4; i++) pages.appendChild(el('span', 'x-page'));
+    thread.appendChild(pages);
+    var typing = el('div', 'x-msg x-typing', '<i></i><i></i><i></i>');
+    thread.appendChild(typing);
+    await wait(1100);
+    var ps = pages.children;
+    if (s.pages === 'hit') { ps[2].classList.add('hit'); ps[2].innerHTML = '<b>p. 14</b>'; [0, 1, 3].forEach(function (k) { ps[k].classList.add('miss'); }); }
+    else if (s.pages === 'two') { ps[1].classList.add('hit'); ps[3].classList.add('hit'); ps[1].innerHTML = '<b>p. 21</b>'; ps[3].innerHTML = '<b>p. 22</b>'; [0, 2].forEach(function (k) { ps[k].classList.add('miss'); }); }
+    else { for (var j = 0; j < 4; j++) ps[j].classList.add('miss'); }
+    await wait(900);
+    typing.remove();
+    var ans = el('div', 'x-msg');
+    ans.textContent = s.a;
+    if (s.chip) ans.appendChild(el('div', 'x-chip ok', s.chip));
+    thread.appendChild(ans);
+    if (s.choices) {
+      var c = el('div', 'x-choices');
+      s.choices.forEach(function (ch) { c.appendChild(el('span', ch[0], ch[1])); });
+      thread.appendChild(c);
+    }
+    setStatus(s.tag[0], s.tag[1]);
+    await wait(3400);
+  }
+
+  async function loop() {
+    if (reduce) { await scene(SCENES[0]); return; }
+    for (var k = 0; ; k = (k + 1) % SCENES.length) { await scene(SCENES[k]); }
+  }
+  loop();
+})();
+</script>
+</main>
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="foot">
+      <div style="max-width: 340px; display: flex; flex-direction: column; gap: 12px;">
+        <a class="brand" href="index.html"><img class="logo-l" src="assets/logo-mark.svg" alt=""><img class="logo-d" src="assets/logo-mark-light.svg" alt="">GroundedOps</a>
+        <p style="font-family: var(--serif); font-size: 19px; font-style: italic;" class="ink2">Grounded, or it says nothing.</p>
+        <p class="muted" style="font-size: 14px;">Self-hosted. Your documents stay on your machine.</p>
+      </div>
+      <div class="foot-cols">
+        <div><span class="eyebrow">Product</span><a href="index.html#demo">Live demo</a><a href="index.html#how">How it works</a><a href="index.html#self-hosted">Self-hosting</a><a href="pricing.html">Pricing</a></div>
+        <div><span class="eyebrow">Get started</span><a href="get-started.html">Free trial</a><a href="get-started.html?plan=pro">Buy a licence</a><a href="mailto:hello@groundedops.example">Book a demo</a></div>
+        <div><span class="eyebrow">Legal</span><a href="#">Licence terms</a><a href="#">Privacy</a><a href="#">Cookies</a></div>
+      </div>
+    </div>
+    <div class="foot-base"><span>© 2026 GroundedOps · staging</span><span style="font-family: var(--mono);">Every answer cited. Every refusal honest.</span></div>
+  </div>
+</footer>
+<script src="assets/site.js"></script>
+<script src="assets/bot.js"></script>
+</body>
+</html>
