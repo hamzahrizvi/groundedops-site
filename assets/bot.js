@@ -4,7 +4,7 @@
  * address every time it restarts: paste the new one here and push. Leave it
  * empty to hide the chat (for example while the PC running the bot is off).
  */
-window.GO_BOT_API = 'https://distributors-bridge-thanks-beef.trycloudflare.com';
+window.GO_BOT_API = 'https://pastor-instantly-electrical-proxy.trycloudflare.com';
 
 (function () {
   var api = (window.GO_BOT_API || '').replace(/\/+$/, '');
